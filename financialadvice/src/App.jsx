@@ -1,4 +1,4 @@
-
+import { useState } from 'react';
 import './App.css'
 
 function App() {
@@ -15,8 +15,23 @@ function Header(){
   return (
     <div>
       <h1 class="text-blue-600 font-bricolage text-4xl font-bold">MONEY <br/>PLANNER</h1>
+      <Buttons/>
     </div>
   );
+}
+
+function Buttons(){
+  const [benefits, setBenefits] = useState(false)
+ return(
+   <div>
+    <button onClick={()=>setBenefits(true)}> Benefits</button>
+    <button> EverydayMoney</button>
+    <button>Pensions</button>
+    <button>Savings</button>
+
+    {benefits && <Benefits/>}
+  </div>
+ )
 }
 
 function Benefits(){
@@ -102,7 +117,7 @@ function EverdayMoney(){
   );
 }
 
-function Pension(){
+function Pensions(){
   return (
     <div>
       <ul>
@@ -158,7 +173,7 @@ function Pension(){
   );
 }
 
-function Save(){
+function Savings(){
   return (
     <div>
       <ul>
@@ -185,6 +200,62 @@ function Save(){
         <li>
           <a href="https://www.moneyhelper.org.uk/en/savings">Savings</a>
           <p>All savings guidance</p>
+        </li>
+      </ul>
+    </div>
+  );
+}
+
+function Work(){
+  return (
+    <div>
+      <ul>
+        <li>
+          <a href="https://www.moneyhelper.org.uk/en/work/employment">
+            Employment
+          </a>
+          <p>Basic, benefits, tax and National Insurance</p>
+        </li>
+        <li>
+          <a href="https://www.moneyhelper.org.uk/en/work/losing-your-job">
+            Losing your Job
+          </a>
+          <p>What to do, alternatives, redunctancy </p>
+        </li>
+        <li>
+          <a href="https://www.moneyhelper.org.uk/en/work/self-employment">
+            Self-Employment
+          </a>
+          <p>Starting out, insurance, tax, self-assessment</p>
+        </li>
+        <li>
+          <a href="https://www.moneyhelper.org.uk/en/work">Work</a>
+          <p>All work guidance</p>
+        </li>
+      </ul>
+    </div>
+  );
+}
+function Homes(){
+  return (
+    <div>
+      <ul>
+        <li>
+          <a href="https://www.moneyhelper.org.uk/en/homes/buying-a-home">
+            Mortages and Homebuying
+          </a>
+          <p>
+            Mortages, help buying, remortgaging, first-time buyers, help and
+            support
+          </p>
+        </li>
+        <li>
+          <a href="https://www.moneyhelper.org.uk/en/homes/renting">Renting</a>
+          <p>Help rent a home and dealing with problems</p>
+        </li>
+        <li>
+          <a href="https://www.moneyhelper.org.uk/en/homes">Homes</a>
+          <p>All Homes guidance</p>
         </li>
       </ul>
     </div>
