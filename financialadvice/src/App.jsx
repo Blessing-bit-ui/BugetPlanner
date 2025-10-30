@@ -31,42 +31,91 @@ const [homes, setHomes] = useState(false);
 const [work, setWork] = useState(false);
 const [savings, setSavings] = useState(false); 
 
+function handleBenefits(){
+  setBenefits(benefits === false ? true : false)
+  setEverydayMoney(false)
+  setPensions(false)
+  setHomes(false)
+  setWork(false)
+  setSavings(false)
+}
+function handleEveryDay(){
+  setEverydayMoney(everydayMoney === false ? true : false)
+  setBenefits(false)
+  setPensions(false)
+  setHomes(false)
+  setWork(false)
+  setSavings(false)
+}
 
+function handlePensions(){
+  setPensions(pensions=== false ? true : false)
+  setEverydayMoney(false)
+  setBenefits(false)
+  setHomes(false)
+  setWork(false)
+  setSavings(false)
+}
+function handleHomes(){
+  setHomes(homes === false ? true : false)
+  setEverydayMoney(false)
+  setPensions(false)
+  setBenefits(false)
+  setWork(false)
+  setSavings(false)
+}
+
+function handleWork(){
+  setWork(work === false ? true : false)
+  setEverydayMoney(false)
+  setPensions(false)
+  setHomes(false)
+  setBenefits(false)
+  setSavings(false)
+}
+function handleSavings(){
+  setSavings(savings === false ? true : false)
+  setEverydayMoney(false)
+  setPensions(false)
+  setHomes(false)
+  setWork(false)
+  setBenefits(false)
+}
   return (
     <div>
       <div className="bg-blue-600 p-2 gap-4 flex justify shadow">
         <button
-          onClick={() => setBenefits(benefits === false ? true : false)}
+          onClick={handleBenefits}
           className="bg-tranparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline hover:bg-red-200"
         >
           Benefits
         </button>
         <button
-          onClick={() => setEverydayMoney(everydayMoney === false ? true : false)}
+          onClick={handleEveryDay}
           className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
         >
           Everyday money
         </button>
         <button
-          onClick={() => setPensions(pensions === false ? true : false)}
+          onClick={handlePensions}
           className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
         >
           Pensions
         </button>
         <button
-          onClick={() => setHomes(homes === false ? true : false)}
+          onClick={handleHomes}
           className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
         >
           Homes
         </button>
         <button
-          onClick={() => setWork(work === false ? true : false)}
+          onClick={handleWork}
           className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
         >
           Work
         </button>
         <button
-          onClick={() => setSavings(savings === false ? true : false)}
+          onClick={handleSavings}
           className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
         >
           Savings
