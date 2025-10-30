@@ -1,40 +1,89 @@
-import { useState } from 'react';
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
   return (
-    <div>
-      <Header/>
+    <div className="mb-[300px]">
+      <Header />
     </div>
   );
 }
 
-export default App
+export default App;
 
-function Header(){
+function Header() {
   return (
     <div>
-      <h1 class="text-blue-600 font-bricolage text-4xl font-bold">MONEY <br/>PLANNER</h1>
-      <Buttons/>
+      <h1 className="text-blue-600 font-bricolage text-4xl font-bold">
+        MONEY <br />
+        PLANNER
+      </h1>
+      <Buttons />
     </div>
   );
 }
 
-function Buttons(){
-  const [benefits, setBenefits] = useState(false)
- return(
-   <div>
-    <button onClick={()=>setBenefits(true)}> Benefits</button>
-    <button> EverydayMoney</button>
-    <button>Pensions</button>
-    <button>Savings</button>
+function Buttons() {
+  const [benefits, setBenefits] = useState(false);
+ const [everydayMoney, setEverydayMoney] = useState(false);
+const [pensions, setPensions] = useState(false);
+const [homes, setHomes] = useState(false);
+const [work, setWork] = useState(false);
+const [savings, setSavings] = useState(false); 
 
-    {benefits && <Benefits/>}
-  </div>
- )
+
+  return (
+    <div>
+      <div className="bg-blue-600 p-2 gap-4 flex justify shadow">
+        <button
+          onClick={() => setBenefits(benefits === false ? true : false)}
+          className="bg-tranparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline hover:bg-red-200"
+        >
+          Benefits
+        </button>
+        <button
+          onClick={() => setEverydayMoney(everydayMoney === false ? true : false)}
+          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
+        >
+          Everyday money
+        </button>
+        <button
+          onClick={() => setPensions(pensions === false ? true : false)}
+          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
+        >
+          Pensions
+        </button>
+        <button
+          onClick={() => setHomes(homes === false ? true : false)}
+          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
+        >
+          Homes
+        </button>
+        <button
+          onClick={() => setWork(work === false ? true : false)}
+          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
+        >
+          Work
+        </button>
+        <button
+          onClick={() => setSavings(savings === false ? true : false)}
+          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
+        >
+          Savings
+        </button>
+      </div>
+      {benefits && <Benefits />}
+      {everydayMoney && <EverdayMoney/>}
+      {pensions && <Pensions/>}
+      {homes && <Homes/>}
+      {work && <Work/>}
+      {savings && <Savings/>}
+      
+    </div>
+  );
 }
 
-function Benefits(){
+function Benefits() {
   return (
     <div>
       <ul>
@@ -65,14 +114,18 @@ function Benefits(){
           <a href="https://www.moneyhelper.org.uk/en/benefits/benefits-in-later-life">
             Benefits in Later Life
           </a>
-          <p> You may be entitled for help with other coasts on top of your State Pension</p>
+          <p>
+            {" "}
+            You may be entitled for help with other coasts on top of your State
+            Pension
+          </p>
         </li>
       </ul>
     </div>
   );
 }
 
-function EverdayMoney(){
+function EverdayMoney() {
   return (
     <div>
       <ul>
@@ -117,7 +170,7 @@ function EverdayMoney(){
   );
 }
 
-function Pensions(){
+function Pensions() {
   return (
     <div>
       <ul>
@@ -173,7 +226,7 @@ function Pensions(){
   );
 }
 
-function Savings(){
+function Savings() {
   return (
     <div>
       <ul>
@@ -206,7 +259,7 @@ function Savings(){
   );
 }
 
-function Work(){
+function Work() {
   return (
     <div>
       <ul>
@@ -236,7 +289,7 @@ function Work(){
     </div>
   );
 }
-function Homes(){
+function Homes() {
   return (
     <div>
       <ul>
