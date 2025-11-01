@@ -1,10 +1,21 @@
 import { useState } from "react";
 import "./App.css";
+import Home from "./components/Home";
+import Everyday from "./components/Everyday";
+import PageNav from "./components/PageNav";
+import { BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App() {
   return (
-    <div className="mb-[300px]">
+    <div>
       <Header />
+      <BrowserRouter>
+        <PageNav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="everyday" element={<Everyday />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
@@ -19,6 +30,7 @@ function Header() {
         PLANNER
       </h1>
       <Buttons />
+   
     </div>
   );
 }
@@ -363,3 +375,5 @@ function Homes() {
     </div>
   );
 }
+
+
