@@ -1,3 +1,5 @@
+ import {Link} from "react-router-dom"
+
 function Home() {
     return (
       <div
@@ -7,14 +9,18 @@ function Home() {
         <main className="text-white font-bold text-[20px] ml-2">
           <h1>Get in touch</h1>
           <p>
-            Got a question? <br/>
-             We’re here to help.<br/> Whether you contact us <br/> online or
-            by phone, you’ll always <br/> talk to a real person.{" "}
+            Got a question? <br />
+            We’re here to help.
+            <br /> Whether you contact us <br /> online or by phone, you’ll
+            always <br /> talk to a real person.{" "}
           </p>
         </main>
-        <button className="text-white bg-pink-500 font-bold ml-2 mt-2 p-2 border  rounded hover:underline">Contact us</button>
-      
-      
+        <button className="text-white bg-pink-500 font-bold ml-2 mt-2 p-2 border  rounded hover:underline">
+          Contact us
+        </button>
+        <section>
+          <Link to="/benefits">Benefits</Link>
+        </section>
       </div>
     );
 }

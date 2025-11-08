@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "./App.css";
-import Home from "./components/Home";
-import Everyday from "./components/Everyday";
-import PageNav from "./components/PageNav";
-import { BrowserRouter, Routes, Route} from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Everyday from "./pages/Everyday";
+import PageNav from "./pages/PageNav";
+import Benefits from "./pages/Benefits"
+import UniversalCredit from "./components/UniversalCredit";
+
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="everyday" element={<Everyday />} />
+          <Route path="benefits" element={<Benefits/>}>
+          <Route path="universalbenefits" element={<UniversalCredit/>}/>
+           </Route>
         </Routes>
       </BrowserRouter>
     </div>
@@ -133,7 +139,7 @@ function handleSavings(){
           Savings
         </button>
       </div>
-      {benefits && <Benefits />}
+      {benefits && <Benefit />}
       {everydayMoney && <EverdayMoney/>}
       {pensions && <Pensions/>}
       {homes && <Homes/>}
@@ -144,7 +150,7 @@ function handleSavings(){
   );
 }
 
-function Benefits() {
+function Benefit() {
   return (
     <div>
       <ul>
