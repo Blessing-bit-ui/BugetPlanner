@@ -19,7 +19,7 @@ function reducer(state, action){
     case "pay":
       return {
         ...state,
-        pay: action.payload,
+        pay: action.payload
       };
     case "selfemployment":
       return {
@@ -61,22 +61,28 @@ function reducer(state, action){
               ...state,
               income:state.pay + state.selfEmployment + state.statutory
             };
+            case "spending":
+              return{
+                ...state,
+                spending : state.mortgage + state.rent + state.shopping + state.travel + state.children
+              };
             default:{
               return state
             }
   }
 }
 function Budgetplanner() {
-  const [{ pay, selfEmployment, statutory, shopping, children, travel, rent, mortgage, income}, dispatch] = useReducer(
+  const [{ pay, selfEmployment, statutory, shopping, children, travel, rent, mortgage, income, spending}, dispatch] = useReducer(
     reducer,
     initialState
   );
-
+   const Balance = income - spending
   useEffect(
     function () {
       dispatch({ type: "income" });
+      dispatch({type : "spending"});
     },
-    [pay, selfEmployment, statutory]
+    [pay, selfEmployment, statutory, mortgage, rent, shopping, travel, children]
   );
   return (
     <div className="w-[300px] ">
@@ -86,7 +92,7 @@ function Budgetplanner() {
           {" "}
           PAY (after tax)
           <input
-            type="number"
+          type="number"
             value={pay}
             onChange={(e) => dispatch({ type: "pay", payload:Number(e.target.value) })}
             className="border-[1px]"
@@ -175,11 +181,14 @@ function Budgetplanner() {
           />
         </label>
       </form>
-
+ <div>
       <h1> Income {income}</h1>
-      <h1> Spending</h1>
-      <h1>Balance</h1>
+      <h1> Spending {spending}</h1>
+      <h1>{income > spending ?
+       "Spare Cash" : spending > income
+       ? " OverSpending" : "Balance" } {Balance}</h1>
+      </div>
     </div>
-  );}
+  )}
 
 export default Budgetplanner;
