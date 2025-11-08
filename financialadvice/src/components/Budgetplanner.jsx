@@ -40,42 +40,44 @@ function reducer(state, action){
             return{
               ...state,
               travel: action.payload
-            }
+            };
         case "children":
           return{
             ...state,
             children:action.payload
-          }
+          };
           case "rent":
           return{
             ...state,
             rent:action.payload
-          }
+          };
           case "mortgage":
           return{
             ...state,
             mortgage:action.payload
-          }
+          };
           case "income":
             return{
               ...state,
               income:state.pay + state.selfEmployment + state.statutory
-            }
+            };
             default:{
               return state
             }
   }
 }
 function Budgetplanner() {
-  const [{ pay, selfEmployment, statutory, shopping, children, travel, rent, mortgage}, dispatch] = useReducer(
+  const [{ pay, selfEmployment, statutory, shopping, children, travel, rent, mortgage, income}, dispatch] = useReducer(
     reducer,
     initialState
   );
 
- /* useEffect(function(){
-    dispatch({type:"income"})
-  },[pay, selfEmployment, statutory]
-)*/
+  useEffect(
+    function () {
+      dispatch({ type: "income" });
+    },
+    [pay, selfEmployment, statutory]
+  );
   return (
     <div className="w-[300px] ">
       <h1>Budget Planner</h1>
