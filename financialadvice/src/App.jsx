@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import {Link} from "react-router-dom"
 import Home from "./pages/Home";
 import Everyday from "./pages/Everyday";
 import PageNav from "./pages/PageNav";
@@ -8,18 +10,19 @@ import Benefits from "./pages/Benefits"
 import UniversalCredit from "./components/UniversalCredit";
 
 
+
 function App() {
   return (
     <div>
       <Header />
       <BrowserRouter>
-        <PageNav />
+        <Buttons />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="everyday" element={<Everyday />} />
-          <Route path="benefits" element={<Benefits/>}>
-          <Route path="universalbenefits" element={<UniversalCredit/>}/>
-           </Route>
+          <Route path="benefits" element={<Benefits />}>
+            <Route path="universalbenefits" element={<UniversalCredit />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
@@ -35,7 +38,7 @@ function Header() {
         MONEY <br />
         PLANNER
       </h1>
-      <Buttons />
+     
    
     </div>
   );
@@ -100,7 +103,7 @@ function handleSavings(){
   setBenefits(false)
 }
   return (
-    <div>
+    <div className="relative">
       <div className="bg-blue-600 p-2 gap-4 flex justify shadow">
         <button
           onClick={handleBenefits}
@@ -139,13 +142,34 @@ function handleSavings(){
           Savings
         </button>
       </div>
-      {benefits && <Benefit />}
-      {everydayMoney && <EverdayMoney/>}
-      {pensions && <Pensions/>}
-      {homes && <Homes/>}
-      {work && <Work/>}
-      {savings && <Savings/>}
-      
+     
+     {benefits && <div
+  className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+    
+        <Benefit />
+      </div>
+}
+      {everydayMoney &&
+      <div
+  className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+    
+        
+      <EverdayMoney /> 
+      </div>}
+      {pensions && <div
+  className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+     <Pensions /> </div>}
+      {homes && 
+      <div
+  className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+    
+      <Homes /> </div>}
+      {work && <div
+  className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+     <Work /> </div>}
+      {savings && <div
+  className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+     <Savings /> </div>}
     </div>
   );
 }
@@ -153,11 +177,18 @@ function handleSavings(){
 function Benefit() {
   return (
     <div>
+      <Outlet />
       <ul>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/benefits/universal-credit">
-            Universal Credit
-          </a>
+          <span>
+            <Link
+              to="/benefits/universalbenefits"
+              className="text-pink-500 font-bold hover:underline"
+            >
+              {" "}
+              Universal Credit
+            </Link>
+          </span>
           <p>
             Find Out how Universal Credit works and how to manage your payment
           </p>
