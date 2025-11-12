@@ -6,7 +6,8 @@ function UniversalCredit() {
         <header>
           <h1>Universal Credit</h1>
         </header>
-        <main>
+        <main className="flex">
+         <section>
           <p>
             If you're on a low income, Universal Credit can give you extra money
             to help with the costs of living, including housing and bringing up
@@ -22,7 +23,10 @@ function UniversalCredit() {
             <li>how to manage your money and get financial support </li>
             <li>where to get free and confidential advice and help. </li>
           </ul>
+          </section>
+          <section>
           <img src="https://www.moneyhelper.org.uk/content/dam/maps/en/l2-images/man-and-two-young-children-sitting-on-floor-reading.jpg.pic.624.312.low.jpg" />
+ </section>      
         </main>
       </div>
     );

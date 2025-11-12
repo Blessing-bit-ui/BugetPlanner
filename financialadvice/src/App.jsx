@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 import Home from "./pages/Home";
 import Everyday from "./pages/Everyday";
 import PageNav from "./pages/PageNav";
@@ -15,14 +15,17 @@ function App() {
   return (
     <div>
       <Header />
+
       <BrowserRouter>
         <Buttons />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="everyday" element={<Everyday />} />
-          <Route path="benefits" element={<Benefits />}>
-            <Route path="universalbenefits" element={<UniversalCredit />} />
-          </Route>
+          <Route path="benefits" element={<Benefits />} />
+          <Route
+            path="benefits/universalbenefits"
+            element={<UniversalCredit />}
+          />
         </Routes>
       </BrowserRouter>
     </div>
@@ -180,17 +183,17 @@ function handleSavings(){
 function Benefit() {
   return (
     <div>
-      <Outlet />
+      
       <ul>
         <li>
           <span>
-            <Link
+            <NavLink
               to="/benefits/universalbenefits"
               className="text-pink-500 font-bold hover:underline"
             >
               {" "}
               Universal Credit
-            </Link>
+            </NavLink>
           </span>
           <p>
             Find Out how Universal Credit works and how to manage your payment

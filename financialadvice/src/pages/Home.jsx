@@ -1,4 +1,4 @@
- import {Link} from "react-router-dom"
+ import {NavLink} from "react-router-dom"
  import PageNav from "./PageNav";
 
 function Home() {
@@ -22,7 +22,7 @@ function Home() {
             Contact us
           </button>
           <section>
-            <Link to="/benefits" className="font-bold hover:underline" >Benefits</Link>
+            <NavLink to="/benefits" className="font-bold hover:underline" >Benefits</NavLink>
           </section>
         </div>
       </div>
