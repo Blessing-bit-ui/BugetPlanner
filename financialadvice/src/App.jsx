@@ -107,69 +107,72 @@ function handleSavings(){
       <div className="bg-blue-600 p-2 gap-4 flex justify shadow">
         <button
           onClick={handleBenefits}
-          className="bg-tranparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline hover:bg-red-200"
+          className="bg-tranparent border-none p-0 m-0 text-inherit cursor-pointer text-white hover:underline hover:bg-pink-500 rounded-sm p-2 font-bold "
         >
           Benefits
         </button>
         <button
           onClick={handleEveryDay}
-          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
+          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer text-white hover:underline focus:outline-none hover:bg-pink-500 rounded-sm p-2 font-bold"
         >
           Everyday money
         </button>
         <button
           onClick={handlePensions}
-          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
+          className="bg-transparent border-none p-0 m-0 text-inherit text-white cursor-pointer hover:underline focus:outline-none hover:bg-pink-500 rounded-sm p-2 font-bold "
         >
           Pensions
         </button>
         <button
           onClick={handleHomes}
-          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
+          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-pink-500 rounded-sm p-2 font-bold text-white"
         >
           Homes
         </button>
         <button
           onClick={handleWork}
-          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
+          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-pink-500 rounded-sm p-2 font-bold text-white"
         >
           Work
         </button>
         <button
           onClick={handleSavings}
-          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-red-200"
+          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-pink-500 rounded-sm p-2 font-bold text-white "
         >
           Savings
         </button>
       </div>
-     
-     {benefits && <div
-  className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
-    
-        <Benefit />
-      </div>
-}
-      {everydayMoney &&
-      <div
-  className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
-    
-        
-      <EverdayMoney /> 
-      </div>}
-      {pensions && <div
-  className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
-     <Pensions /> </div>}
-      {homes && 
-      <div
-  className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
-    
-      <Homes /> </div>}
-      {work && <div
-  className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
-     <Work /> </div>}
-      {savings && <div
-  className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
-     <Savings /> </div>}
+
+      {benefits && (
+        <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+          <Benefit />
+        </div>
+      )}
+      {everydayMoney && (
+        <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+          <EverdayMoney />
+        </div>
+      )}
+      {pensions && (
+        <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+          <Pensions />{" "}
+        </div>
+      )}
+      {homes && (
+        <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+          <Homes />{" "}
+        </div>
+      )}
+      {work && (
+        <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+          <Work />{" "}
+        </div>
+      )}
+      {savings && (
+        <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+          <Savings />{" "}
+        </div>
+      )}
     </div>
   );
 }

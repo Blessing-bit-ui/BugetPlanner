@@ -1,1 +1,5 @@
 @import "tailwindcss";
+.material-symbols-outlined {
+  font-size: inherit; /* Makes it follow Tailwind's text-* size */
+  line-height: 1;     /* Keeps it vertically centered */
+}
