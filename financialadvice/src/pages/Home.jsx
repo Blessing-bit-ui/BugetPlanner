@@ -1,9 +1,11 @@
  import {NavLink} from "react-router-dom"
+ import { useNavigate } from "react-router-dom";
  import PageNav from "./PageNav";
 
 function Home() {
+  const navigate= useNavigate()
     return (
-      <div>
+      <div onClick={()=>navigate(-1)} >
         <PageNav/>
         <div
           className="bg-[url(https://media.istockphoto.com/id/1446885495/photo/happy-kiss-and-hug-on-mothers-day-in-living-room-sofa-love-and-relaxing-together-in-australia.jpg?s=612x612&w=0&k=20&c=7oteLN0x8VbzXwXQlyT4LZ2F5sipX99_3u5uUbP9isI=)]

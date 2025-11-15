@@ -85,19 +85,20 @@ function Budgetplanner() {
     [pay, selfEmployment, statutory, mortgage, rent, shopping, travel, children]
   );
   return (
-    <div className="w-[300px] ">
-      <h1>Budget Planner</h1>
+    <div className="w-[300px] ml-5 p-2 ">
+      <h1 className="text-pink-500 font-bold text-xl underline mb-2">Budget Planner</h1>
       <form>
-        <label>
+        <label className="font-bold">
           {" "}
           PAY (after tax)
+          </label>
           <input
           type="number"
             value={pay}
             onChange={(e) => dispatch({ type: "pay", payload:Number(e.target.value) })}
-            className="border-[1px]"
+            className="border-[2px]"
           />
-        </label>
+        
         <label>
           {" "}
           Income from Self Employment
