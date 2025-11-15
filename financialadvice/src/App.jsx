@@ -13,15 +13,28 @@ import { useNavigate } from "react-router-dom";
 
 
 function App() {
+  const [benefits, setBenefits] = useState(false);
+  const [everydayMoney, setEverydayMoney] = useState(false);
+  const [pensions, setPensions] = useState(false);
+  const [homes, setHomes] = useState(false);
+  const [work, setWork] = useState(false);
+  const [savings, setSavings] = useState(false); 
+
+function handleCloseBenefit(){
+setBenefits(benefits === true  && false)
+}
+
   return (
     <div>
       <Header />
-
       <BrowserRouter>
-        <Buttons />
+        <Buttons benefits={benefits}
+         setBenefits={setBenefits} everydayMoney={everydayMoney} 
+         setEverydayMoney={setEverydayMoney} pensions={pensions} setPensions={setPensions} homes={homes} 
+         setHomes={setHomes} work={work} setWork={setWork} savings={savings} setSavings={setSavings}/>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="everyday" element={<Everyday />} />
+          <Route path="/" element={<Home/>} />
+          <Route path="everyday" element={<Everyday handleCloseBenefit={handleCloseBenefit} />} />
           <Route path="benefits" element={<Benefits />} />
           <Route
             path="benefits/universalbenefits"
@@ -48,14 +61,8 @@ function Header() {
   );
 }
 
-function Buttons() {
-  const [benefits, setBenefits] = useState(false);
- const [everydayMoney, setEverydayMoney] = useState(false);
-const [pensions, setPensions] = useState(false);
-const [homes, setHomes] = useState(false);
-const [work, setWork] = useState(false);
-const [savings, setSavings] = useState(false); 
-
+function Buttons({benefits, setBenefits, everydayMoney, setEverydayMoney, pensions, setPensions, homes, setHomes, savings, setSavings, work, setWork}) {
+  
 function handleBenefits(){
   setBenefits(benefits === false ? true : false)
   setEverydayMoney(false)
@@ -106,6 +113,7 @@ function handleSavings(){
   setWork(false)
   setBenefits(false)
 }
+
   return (
     <div className="relative">
       <div className="bg-blue-600 p-2 gap-4 flex justify shadow">
@@ -182,8 +190,9 @@ function handleSavings(){
 }
 
 function Benefit() {
+  const navigate= useNavigate()
   return (
-    <div>
+    <div onClick={()=>navigate(-1)}>
       
       <ul>
         <li>

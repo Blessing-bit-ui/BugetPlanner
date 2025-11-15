@@ -1,12 +1,15 @@
 import Budgetplanner from "./Budgetplanner"
 
-function Everyday() {
-    return (
-        <div>
-           EverydayMoney
-           <Budgetplanner/>
-        </div>
-    )
+function Everyday({ handleCloseBenefit }) {
+    function closeBenefits(){
+        handleCloseBenefit()
+    }
+  return (
+    <div onClick={handleCloseBenefit}>
+      EverydayMoney
+      <Budgetplanner />
+    </div>
+  );
 }
 
 export default Everyday
