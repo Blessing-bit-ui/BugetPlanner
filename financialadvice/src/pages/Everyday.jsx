@@ -1,11 +1,11 @@
 import Budgetplanner from "./Budgetplanner"
 
-function Everyday({ handleCloseBenefit }) {
-    function closeBenefits(){
-        handleCloseBenefit()
-    }
+function Everyday({ onhandleCloseButtons }) {
+  function OpenUI () {
+    onhandleCloseButtons();
+  }
   return (
-    <div onClick={handleCloseBenefit}>
+    <div onClick={OpenUI}>
       EverydayMoney
       <Budgetplanner />
     </div>

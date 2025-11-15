@@ -1,5 +1,9 @@
 import { Outlet } from "react-router-dom";
-function UniversalCredit() {
+import { useEffect } from "react";
+function UniversalCredit({onhandleCloseButtons }) {
+useEffect(function(){
+  onhandleCloseButtons()
+}, [])
     return (
       <div>
      

@@ -20,25 +20,45 @@ function App() {
   const [work, setWork] = useState(false);
   const [savings, setSavings] = useState(false); 
 
-function handleCloseBenefit(){
+function handleCloseButtons(){
 setBenefits(benefits === true  && false)
+setEverydayMoney(everydayMoney=== true && false)
+setPensions(pensions === true && false)
+setHomes(homes === true && false)
+setWork(work === true && false)
+setSavings(savings === true && false)
 }
 
   return (
     <div>
       <Header />
       <BrowserRouter>
-        <Buttons benefits={benefits}
-         setBenefits={setBenefits} everydayMoney={everydayMoney} 
-         setEverydayMoney={setEverydayMoney} pensions={pensions} setPensions={setPensions} homes={homes} 
-         setHomes={setHomes} work={work} setWork={setWork} savings={savings} setSavings={setSavings}/>
+        <Buttons
+          benefits={benefits}
+          setBenefits={setBenefits}
+          everydayMoney={everydayMoney}
+          setEverydayMoney={setEverydayMoney}
+          pensions={pensions}
+          setPensions={setPensions}
+          homes={homes}
+          setHomes={setHomes}
+          work={work}
+          setWork={setWork}
+          savings={savings}
+          setSavings={setSavings}
+        />
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="everyday" element={<Everyday handleCloseBenefit={handleCloseBenefit} />} />
+          <Route path="/" element={<Home />} />
+          <Route
+            path="everyday"
+            element={<Everyday onhandleCloseButtons={handleCloseButtons} />}
+          />
           <Route path="benefits" element={<Benefits />} />
           <Route
             path="benefits/universalbenefits"
-            element={<UniversalCredit />}
+            element={
+              <UniversalCredit onhandleCloseButtons={handleCloseButtons} />
+            }
           />
         </Routes>
       </BrowserRouter>
@@ -189,11 +209,9 @@ function handleSavings(){
   );
 }
 
-function Benefit() {
-  const navigate= useNavigate()
+function Benefit(){
   return (
-    <div onClick={()=>navigate(-1)}>
-      
+    <div>
       <ul>
         <li>
           <span>
