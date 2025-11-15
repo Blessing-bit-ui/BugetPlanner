@@ -1,4 +1,4 @@
-import {  useReducer, useEffect } from "react";
+import {  useReducer, useEffect, useState } from "react";
 
 const initialState = {
 pay:0,
@@ -11,30 +11,52 @@ travel:0,
 children:0,
 income:0,
 spending:0,
-balance:0
+balance:0,
+period : ""
 
 }
 function reducer(state, action){
+
   switch (action.type) {
+    case "period":
+      return{
+        ...state,
+        period:action.payload
+      }
     case "pay":
       return {
         ...state,
-        pay: action.payload
-      };
+        pay: state.period === "yearly" ? action.payload * 12 : state.period=== "daily" ? action.payload * 360 : action.payload
+      }
     case "selfemployment":
       return {
         ...state,
-        selfEmployment: action.payload,
+        selfEmployment:
+          state.period === "yearly"
+            ? action.payload * 12
+            : state.period === "daily"
+            ? action.payload * 360
+            : action.payload,
       };
       case "statutory":
-        return{
+        return {
           ...state,
-          statutory:action.payload
+          statutory:
+            state.period === "yearly"
+              ? action.payload * 12
+              : state.period === "daily"
+              ? action.payload * 360
+              : action.payload,
         };
         case "shopping":
-          return{
+          return {
             ...state,
-            shopping: action.payload
+            shopping:
+              state.period === "yearly"
+                ? action.payload * 12
+                : state.period === "daily"
+                ? action.payload * 360
+                : action.payload,
           };
           case "travel":
             return{
@@ -42,19 +64,34 @@ function reducer(state, action){
               travel: action.payload
             };
         case "children":
-          return{
+          return {
             ...state,
-            children:action.payload
+            children:
+              state.period === "yearly"
+                ? action.payload * 12
+                : state.period === "daily"
+                ? action.payload * 360
+                : action.payload,
           };
           case "rent":
-          return{
+          return {
             ...state,
-            rent:action.payload
+            rent:
+              state.period === "yearly"
+                ? action.payload * 12
+                : state.period === "daily"
+                ? action.payload * 360
+                : action.payload,
           };
           case "mortgage":
-          return{
+          return {
             ...state,
-            mortgage:action.payload
+            mortgage:
+              state.period === "yearly"
+                ? action.payload * 12
+                : state.period === "daily"
+                ? action.payload * 360
+                : action.payload,
           };
           case "income":
             return{
@@ -72,7 +109,7 @@ function reducer(state, action){
   }
 }
 function Budgetplanner() {
-  const [{ pay, selfEmployment, statutory, shopping, children, travel, rent, mortgage, income, spending}, dispatch] = useReducer(
+  const [{ pay, selfEmployment, statutory, shopping, children, travel, rent, mortgage, income, spending, period}, dispatch] = useReducer(
     reducer,
     initialState
   );
@@ -82,23 +119,39 @@ function Budgetplanner() {
       dispatch({ type: "income" });
       dispatch({type : "spending"});
     },
-    [pay, selfEmployment, statutory, mortgage, rent, shopping, travel, children]
+    [pay, selfEmployment, statutory, mortgage, rent, shopping, travel, children,]
   );
+
+  useEffect(function(){
+    dispatch({type: "pay", payload: pay})
+    dispatch({type: "selfEmployment", payload: selfEmployment })
+  },[period])
+
   return (
     <div className="w-[300px] ml-5 p-2 ">
-      <h1 className="text-pink-500 font-bold text-xl underline mb-2">Budget Planner</h1>
+      <h1 className="text-pink-500 font-bold text-xl underline mb-2">
+        Budget Planner
+      </h1>
       <form>
-        <label className="font-bold">
-          {" "}
-          PAY (after tax)
-          </label>
-          <input
+        <label className="font-bold"> PAY (after tax)</label>
+        <input
           type="number"
-            value={pay}
-            onChange={(e) => dispatch({ type: "pay", payload:Number(e.target.value) })}
-            className="border-[2px]"
-          />
-        
+          value={pay}
+          onChange={(e) =>
+            dispatch({ type: "pay", payload: Number(e.target.value) })
+          }
+          className="border-[2px]"
+        />
+        <select
+          value={period}
+          onChange={(e) =>
+            dispatch({ type: "period", payload: e.target.value })
+          }
+        >
+          <option value="monthly">Monthly</option>
+          <option value="yearly">Yearly</option>
+          <option value="daily">Daily</option>
+        </select>
         <label>
           {" "}
           Income from Self Employment
@@ -106,11 +159,24 @@ function Budgetplanner() {
             type="number"
             value={selfEmployment}
             onChange={(e) =>
-              dispatch({ type: "selfemployment", payload: Number(e.target.value) })
+              dispatch({
+                type: "selfemployment",
+                payload: Number(e.target.value),
+              })
             }
             className="border-[1px]"
           />
         </label>
+        <select
+          value={period}
+          onChange={(e) =>
+            dispatch({ type: "period", payload: e.target.value })
+          }
+        >
+          <option value="monthly">Monthly</option>
+          <option value="yearly">Yearly</option>
+          <option value="daily">Daily</option>
+        </select>
         <label>
           Statutory Sick Pay
           <input
@@ -122,6 +188,16 @@ function Budgetplanner() {
             className="border-[1px]"
           />
         </label>
+        <select
+          value={period}
+          onChange={(e) =>
+            dispatch({ type: "period", payload: e.target.value })
+          }
+        >
+          <option value="monthly">Monthly</option>
+          <option value="yearly">Yearly</option>
+          <option value="daily">Daily</option>
+        </select>
       </form>
       <form>
         <label>
@@ -182,14 +258,19 @@ function Budgetplanner() {
           />
         </label>
       </form>
- <div>
-      <h1> Income {income}</h1>
-      <h1> Spending {spending}</h1>
-      <h1>{income > spending ?
-       "Spare Cash" : spending > income
-       ? " OverSpending" : "Balance" } {Balance}</h1>
+      <div>
+        <h1> Income {income}</h1>
+        <h1> Spending {spending}</h1>
+        <h1>
+          {income > spending
+            ? "Spare Cash"
+            : spending > income
+            ? " OverSpending"
+            : "Balance"}{" "}
+          {Balance}
+        </h1>
       </div>
     </div>
-  )}
+  );}
 
 export default Budgetplanner;
