@@ -12,7 +12,15 @@ children:0,
 income:0,
 spending:0,
 balance:0,
-period : ""
+payPeriod : "",
+selfEmploymentPeriod: "",
+statutoryPeriod:"",
+mortgagePeriod:"",
+rentPeriod:"",
+shoppingPeriod:"",
+travelPeriod:"",
+childrenPeriod:"",
+
 
 }
 function reducer(state, action){
@@ -21,20 +29,30 @@ function reducer(state, action){
     case "period":
       return{
         ...state,
-        period:action.payload
+        payPeriod:action.payload
       }
+      case "selfEmploymentPeriod":
+        return{
+          ...state,
+          selfEmploymentPeriod: action.payload
+        }
+        case "statutoryPeriod":
+          return{
+            ...state,
+            statutoryPeriod:action.payload
+          }
     case "pay":
       return {
         ...state,
-        pay: state.period === "yearly" ? action.payload * 12 : state.period=== "daily" ? action.payload * 360 : action.payload
+        pay: state.payPeriod === "yearly" ? action.payload * 12 : state.payPeriod=== "daily" ? action.payload * 360 : action.payload
       }
     case "selfemployment":
       return {
         ...state,
         selfEmployment:
-          state.period === "yearly"
+          state.selfEmploymentPeriod === "yearly"
             ? action.payload * 12
-            : state.period === "daily"
+            : state.selfEmploymentPeriod === "daily"
             ? action.payload * 360
             : action.payload,
       };
@@ -42,9 +60,9 @@ function reducer(state, action){
         return {
           ...state,
           statutory:
-            state.period === "yearly"
+            state.statutoryPeriod === "yearly"
               ? action.payload * 12
-              : state.period === "daily"
+              : state.statutoryPeriod === "daily"
               ? action.payload * 360
               : action.payload,
         };
@@ -109,11 +127,23 @@ function reducer(state, action){
   }
 }
 function Budgetplanner() {
-  const [{ pay, selfEmployment, statutory, shopping, children, travel, rent, mortgage, income, spending, period}, dispatch] = useReducer(
+  const [{ pay, selfEmployment,
+     statutory, shopping,
+      children, travel, 
+      rent, mortgage, income, spending, payPeriod, selfEmploymentPeriod, statutoryPeriod}, dispatch] = useReducer(
     reducer,
     initialState
   );
    const Balance = income - spending
+  /useEffect(
+     function () {
+       dispatch({ type: "pay", payload: pay });
+       dispatch({ type: "selfemployment", payload: selfEmployment });
+       dispatch({ type: "statutory", payload: statutory });
+     },
+     [payPeriod, selfEmploymentPeriod, statutoryPeriod]
+   );
+
   useEffect(
     function () {
       dispatch({ type: "income" });
@@ -122,10 +152,7 @@ function Budgetplanner() {
     [pay, selfEmployment, statutory, mortgage, rent, shopping, travel, children,]
   );
 
-  useEffect(function(){
-    dispatch({type: "pay", payload: pay})
-    dispatch({type: "selfEmployment", payload: selfEmployment })
-  },[period])
+  
 
   return (
     <div className="w-[300px] ml-5 p-2 ">
@@ -143,7 +170,7 @@ function Budgetplanner() {
           className="border-[2px]"
         />
         <select
-          value={period}
+          value={payPeriod}
           onChange={(e) =>
             dispatch({ type: "period", payload: e.target.value })
           }
@@ -155,6 +182,7 @@ function Budgetplanner() {
         <label>
           {" "}
           Income from Self Employment
+          </label>
           <input
             type="number"
             value={selfEmployment}
@@ -166,11 +194,10 @@ function Budgetplanner() {
             }
             className="border-[1px]"
           />
-        </label>
         <select
-          value={period}
+          value={selfEmploymentPeriod}
           onChange={(e) =>
-            dispatch({ type: "period", payload: e.target.value })
+            dispatch({ type: "selfEmploymentPeriod", payload: e.target.value })
           }
         >
           <option value="monthly">Monthly</option>
@@ -179,6 +206,7 @@ function Budgetplanner() {
         </select>
         <label>
           Statutory Sick Pay
+          </label>
           <input
             type="number"
             value={statutory}
@@ -187,11 +215,11 @@ function Budgetplanner() {
             }
             className="border-[1px]"
           />
-        </label>
+        
         <select
-          value={period}
+          value={statutoryPeriod}
           onChange={(e) =>
-            dispatch({ type: "period", payload: e.target.value })
+            dispatch({ type: "statutoryPeriod", payload: e.target.value })
           }
         >
           <option value="monthly">Monthly</option>
