@@ -13,7 +13,7 @@ income:0,
 spending:0,
 balance:0,
 payPeriod : "",
-selfEmploymentPeriod: "",
+selfEmploymentPeriod:"",
 statutoryPeriod:"",
 mortgagePeriod:"",
 rentPeriod:"",
@@ -41,15 +41,15 @@ function reducer(state, action){
         ...state,
         statutoryPeriod: action.payload,
       };
-    case " mortgagePeriod":
+    case "mortgagePeriod":
       return {
         ...state,
-        mortgage: action.payload,
+        mortgagePeriod: action.payload,
       };
-    case " rentPeriod":
+    case "rentPeriod":
       return {
         ...state,
-        rent: action.payload,
+        rentPeriod:action.payload,
       };
     case "shoppingPeriod":
       return {
@@ -112,7 +112,7 @@ function reducer(state, action){
         travel:
           state.travelPeriod === "yearly"
             ? action.payload * 12
-            : state.travelPeriod === "monthly"
+            : state.travelPeriod === "daily"
             ? action.payload * 360
             : action.payload,
       };
@@ -170,68 +170,65 @@ function Budgetplanner() {
   const [{ pay, selfEmployment,
      statutory, shopping,
       children, travel, 
-      rent, mortgage, income, spending, payPeriod, selfEmploymentPeriod, statutoryPeriod}, dispatch] = useReducer(
+      rent, mortgage, income, spending, payPeriod, selfEmploymentPeriod, statutoryPeriod, shoppingPeriod, travelPeriod, rentPeriod, childrenPeriod,mortgagePeriod }, dispatch] = useReducer(
     reducer,
     initialState
   );
    
-  useEffect(
-     function () {
-       dispatch({ type: "pay", payload: pay });
+  useEffect(function () {
+       dispatch({type:"pay", payload: pay })
      },
      [payPeriod]
-   );
+   )
 
    useEffect(function(){
-    dispatch({type: "selfemployment", payload: selfEmployment })
-   }, [selfEmploymentPeriod]);
+    dispatch({type:"selfemployment", payload: selfEmployment })
+   }, [selfEmploymentPeriod])
 
    useEffect(function(){
     dispatch({type:"statutory", payload: statutory })
-   }, [statutoryPeriod]);
+   }, [statutoryPeriod])
 
 useEffect(
   function () {
-    dispatch({ type: "shopping", payload: shopping });
+    dispatch({type:"shopping", payload: shopping })
   },
   [shoppingPeriod]
-);
-useEffect(
-  function () {
-    dispatch({ type: "travel", payload: travel });
+)
+useEffect(function () {
+    dispatch({type:"travel", payload: travel });
   },
   [travelPeriod]
-);
+)
 useEffect(
   function () {
-    dispatch({ type: "children", payload: children });
+    dispatch({type:"children", payload: children });
   },
   [childrenPeriod]
-);
+)
+
 useEffect(
   function () {
-    dispatch({ type: "rent", payload: rent });
+    dispatch({ type:"rent", payload: rent });
   },
   [rentPeriod]
-);
+)
 useEffect(
   function () {
-    dispatch({ type: "mortgage", payload: mortgage });
+    dispatch({type:"mortgage", payload: mortgage });
   },
   [mortgagePeriod]
-);
-
+)
 
   useEffect(
     function () {
       dispatch({ type: "income" });
       dispatch({type : "spending"});
     },
-    [pay, selfEmployment, statutory, mortgage, rent, shopping, travel, children,]
-  );
+    [pay, selfEmployment, statutory, mortgage, rent, shopping, travel, children]
+  )
 
-  // const Income = pay + selfEmployment;
-  const Balance = income - spending 
+  const Balance = income-spending 
 
   return (
     <div className="w-[300px] ml-5 p-2 ">
@@ -406,7 +403,7 @@ useEffect(
             ? "Spare Cash"
             : spending > income
             ? " OverSpending"
-            : "Balance"}{" "}
+            : "Balance"}
           {Balance}
         </h1>
       </div>
