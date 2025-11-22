@@ -27,25 +27,55 @@ function reducer(state, action){
 
   switch (action.type) {
     case "period":
-      return{
+      return {
         ...state,
-        payPeriod:action.payload
-      }
-      case "selfEmploymentPeriod":
-        return{
-          ...state,
-          selfEmploymentPeriod: action.payload
-        }
-        case "statutoryPeriod":
-          return{
-            ...state,
-            statutoryPeriod:action.payload
-          }
+        payPeriod: action.payload,
+      };
+    case "selfEmploymentPeriod":
+      return {
+        ...state,
+        selfEmploymentPeriod: action.payload,
+      };
+    case "statutoryPeriod":
+      return {
+        ...state,
+        statutoryPeriod: action.payload,
+      };
+    case " mortgagePeriod":
+      return {
+        ...state,
+        mortgage: action.payload,
+      };
+    case " rentPeriod":
+      return {
+        ...state,
+        rent: action.payload,
+      };
+    case "shoppingPeriod":
+      return {
+        ...state,
+        shoppingPeriod: action.payload,
+      };
+    case "travelPeriod":
+      return {
+        ...state,
+        travelPeriod: action.payload,
+      };
+    case "childrenPeriod":
+      return {
+        ...state,
+        childrenPeriod: action.payload,
+      };
     case "pay":
       return {
         ...state,
-        pay: state.payPeriod === "yearly" ? action.payload * 12 : state.payPeriod=== "daily" ? action.payload * 360 : action.payload
-      }
+        pay:
+          state.payPeriod === "yearly"
+            ? action.payload * 12
+            : state.payPeriod === "daily"
+            ? action.payload * 360
+            : action.payload,
+      };
     case "selfemployment":
       return {
         ...state,
@@ -56,74 +86,84 @@ function reducer(state, action){
             ? action.payload * 360
             : action.payload,
       };
-      case "statutory":
-        return {
-          ...state,
-          statutory:
-            state.statutoryPeriod === "yearly"
-              ? action.payload * 12
-              : state.statutoryPeriod === "daily"
-              ? action.payload * 360
-              : action.payload,
-        };
-        case "shopping":
-          return {
-            ...state,
-            shopping:
-              state.period === "yearly"
-                ? action.payload * 12
-                : state.period === "daily"
-                ? action.payload * 360
-                : action.payload,
-          };
-          case "travel":
-            return{
-              ...state,
-              travel: action.payload
-            };
-        case "children":
-          return {
-            ...state,
-            children:
-              state.period === "yearly"
-                ? action.payload * 12
-                : state.period === "daily"
-                ? action.payload * 360
-                : action.payload,
-          };
-          case "rent":
-          return {
-            ...state,
-            rent:
-              state.period === "yearly"
-                ? action.payload * 12
-                : state.period === "daily"
-                ? action.payload * 360
-                : action.payload,
-          };
-          case "mortgage":
-          return {
-            ...state,
-            mortgage:
-              state.period === "yearly"
-                ? action.payload * 12
-                : state.period === "daily"
-                ? action.payload * 360
-                : action.payload,
-          };
-          case "income":
-            return{
-              ...state,
-              income:state.pay + state.selfEmployment + state.statutory
-            };
-            case "spending":
-              return{
-                ...state,
-                spending : state.mortgage + state.rent + state.shopping + state.travel + state.children
-              };
-            default:{
-              return state
-            }
+    case "statutory":
+      return {
+        ...state,
+        statutory:
+          state.statutoryPeriod === "yearly"
+            ? action.payload * 12
+            : state.statutoryPeriod === "daily"
+            ? action.payload * 360
+            : action.payload,
+      };
+    case "shopping":
+      return {
+        ...state,
+        shopping:
+          state.shoppingPeriod === "yearly"
+            ? action.payload * 12
+            : state.shoppingPeriod === "daily"
+            ? action.payload * 360
+            : action.payload,
+      };
+    case "travel":
+      return {
+        ...state,
+        travel:
+          state.travelPeriod === "yearly"
+            ? action.payload * 12
+            : state.travelPeriod === "monthly"
+            ? action.payload * 360
+            : action.payload,
+      };
+    case "children":
+      return {
+        ...state,
+        children:
+          state.childrenPeriod === "yearly"
+            ? action.payload * 12
+            : state.childrenPeriod === "daily"
+            ? action.payload * 360
+            : action.payload,
+      };
+    case "rent":
+      return {
+        ...state,
+        rent:
+          state.rentPeriod === "yearly"
+            ? action.payload * 12
+            : state.rentPeriod === "daily"
+            ? action.payload * 360
+            : action.payload,
+      };
+    case "mortgage":
+      return {
+        ...state,
+        mortgage:
+          state.mortgagePeriod === "yearly"
+            ? action.payload * 12
+            : state.mortgagePeriod === "daily"
+            ? action.payload * 360
+            : action.payload,
+      };
+    case "income":
+      return {
+        ...state,
+        income: state.pay + state.selfEmployment + state.statutory,
+      };
+    case "spending":
+      return {
+        ...state,
+        spending:
+          state.mortgage +
+          state.rent +
+          state.shopping +
+          state.travel +
+          state.children,
+      };
+    default: {
+      return state;
+    }
   }
 }
 function Budgetplanner() {
@@ -134,15 +174,53 @@ function Budgetplanner() {
     reducer,
     initialState
   );
-   const Balance = income - spending
-  /useEffect(
+   
+  useEffect(
      function () {
        dispatch({ type: "pay", payload: pay });
-       dispatch({ type: "selfemployment", payload: selfEmployment });
-       dispatch({ type: "statutory", payload: statutory });
      },
-     [payPeriod, selfEmploymentPeriod, statutoryPeriod]
+     [payPeriod]
    );
+
+   useEffect(function(){
+    dispatch({type: "selfemployment", payload: selfEmployment })
+   }, [selfEmploymentPeriod]);
+
+   useEffect(function(){
+    dispatch({type:"statutory", payload: statutory })
+   }, [statutoryPeriod]);
+
+useEffect(
+  function () {
+    dispatch({ type: "shopping", payload: shopping });
+  },
+  [shoppingPeriod]
+);
+useEffect(
+  function () {
+    dispatch({ type: "travel", payload: travel });
+  },
+  [travelPeriod]
+);
+useEffect(
+  function () {
+    dispatch({ type: "children", payload: children });
+  },
+  [childrenPeriod]
+);
+useEffect(
+  function () {
+    dispatch({ type: "rent", payload: rent });
+  },
+  [rentPeriod]
+);
+useEffect(
+  function () {
+    dispatch({ type: "mortgage", payload: mortgage });
+  },
+  [mortgagePeriod]
+);
+
 
   useEffect(
     function () {
@@ -152,7 +230,8 @@ function Budgetplanner() {
     [pay, selfEmployment, statutory, mortgage, rent, shopping, travel, children,]
   );
 
-  
+  // const Income = pay + selfEmployment;
+  const Balance = income - spending 
 
   return (
     <div className="w-[300px] ml-5 p-2 ">
@@ -179,21 +258,18 @@ function Budgetplanner() {
           <option value="yearly">Yearly</option>
           <option value="daily">Daily</option>
         </select>
-        <label>
-          {" "}
-          Income from Self Employment
-          </label>
-          <input
-            type="number"
-            value={selfEmployment}
-            onChange={(e) =>
-              dispatch({
-                type: "selfemployment",
-                payload: Number(e.target.value),
-              })
-            }
-            className="border-[1px]"
-          />
+        <label> Income from Self Employment</label>
+        <input
+          type="number"
+          value={selfEmployment}
+          onChange={(e) =>
+            dispatch({
+              type: "selfemployment",
+              payload: Number(e.target.value),
+            })
+          }
+          className="border-[1px]"
+        />
         <select
           value={selfEmploymentPeriod}
           onChange={(e) =>
@@ -204,18 +280,16 @@ function Budgetplanner() {
           <option value="yearly">Yearly</option>
           <option value="daily">Daily</option>
         </select>
-        <label>
-          Statutory Sick Pay
-          </label>
-          <input
-            type="number"
-            value={statutory}
-            onChange={(e) =>
-              dispatch({ type: "statutory", payload: Number(e.target.value) })
-            }
-            className="border-[1px]"
-          />
-        
+        <label>Statutory Sick Pay</label>
+        <input
+          type="number"
+          value={statutory}
+          onChange={(e) =>
+            dispatch({ type: "statutory", payload: Number(e.target.value) })
+          }
+          className="border-[1px]"
+        />
+
         <select
           value={statutoryPeriod}
           onChange={(e) =>
@@ -228,63 +302,101 @@ function Budgetplanner() {
         </select>
       </form>
       <form>
-        <label>
-          Mortgage repayment
-          <input
-            type="number"
-            value={mortgage}
-            onChange={(e) =>
-              dispatch({ type: "mortgage", payload: Number(e.target.value) })
-            }
-            class="border-[1px]"
-          />
-        </label>
-        <label>
-          {" "}
-          Rent
-          <input
-            type="number"
-            value={rent}
-            onChange={(e) =>
-              dispatch({ type: "rent", payload: Number(e.target.value) })
-            }
-            className="border-[1px]"
-          />
-        </label>
-        <label>
-          {" "}
-          Grocery Shopping
-          <input
-            type="number"
-            value={shopping}
-            onChange={(e) =>
-              dispatch({ type: "shopping", payload: Number(e.target.value) })
-            }
-            className="border-[1px]"
-          />
-        </label>
-        <label>
-          Travel
-          <input
-            type="number"
-            value={travel}
-            onChange={(e) =>
-              dispatch({ type: "travel", payload: Number(e.target.value) })
-            }
-            className="border-[1px]"
-          />
-        </label>
-        <label>
-          Children Expenses
-          <input
-            type="number"
-            value={children}
-            onChange={(e) =>
-              dispatch({ type: "children", payload: Number(e.target.value) })
-            }
-            className="border-[1px]"
-          />
-        </label>
+        <label>Mortgage repayment</label>
+        <input
+          type="number"
+          value={mortgage}
+          onChange={(e) =>
+            dispatch({ type: "mortgage", payload: Number(e.target.value) })
+          }
+          class="border-[1px]"
+        />
+        <select
+          value={mortgagePeriod}
+          onChange={(e) =>
+            dispatch({ type: "mortgagePeriod", payload: e.target.value })
+          }
+        >
+          <option value="monthly">Monthly</option>
+          <option value="yearly">Yearly</option>
+          <option value="daily">Daily</option>
+        </select>
+        <label> Rent</label>
+        <input
+          type="number"
+          value={rent}
+          onChange={(e) =>
+            dispatch({ type: "rent", payload: Number(e.target.value) })
+          }
+          className="border-[1px]"
+        />
+        <select
+          value={rentPeriod}
+          onChange={(e) =>
+            dispatch({ type: "rentPeriod", payload: e.target.value })
+          }
+        >
+          <option value="monthly">Monthly</option>
+          <option value="yearly">Yearly</option>
+          <option value="daily">Daily</option>
+        </select>
+        <label> Grocery Shopping </label>
+        <input
+          type="number"
+          value={shopping}
+          onChange={(e) =>
+            dispatch({ type: "shopping", payload: Number(e.target.value) })
+          }
+          className="border-[1px]"
+        />
+        <select
+          value={shoppingPeriod}
+          onChange={(e) =>
+            dispatch({ type: "shoppingPeriod", payload: e.target.value })
+          }
+        >
+          <option value="monthly">Monthly</option>
+          <option value="yearly">Yearly</option>
+          <option value="daily">Daily</option>
+        </select>
+        <label>Travel</label>
+        <input
+          type="number"
+          value={travel}
+          onChange={(e) =>
+            dispatch({ type: "travel", payload: Number(e.target.value) })
+          }
+          className="border-[1px]"
+        />
+        <select
+          value={travelPeriod}
+          onChange={(e) =>
+            dispatch({ type: "travelPeriod", payload: e.target.value })
+          }
+        >
+          <option value="monthly">Monthly</option>
+          <option value="yearly">Yearly</option>
+          <option value="daily">Daily</option>
+        </select>
+        <label>Children Expenses</label>
+        <input
+          type="number"
+          value={children}
+          onChange={(e) =>
+            dispatch({ type: "children", payload: Number(e.target.value) })
+          }
+          className="border-[1px]"
+        />
+        <select
+          value={childrenPeriod}
+          onChange={(e) =>
+            dispatch({ type: "childrenPeriod", payload: e.target.value })
+          }
+        >
+          <option value="monthly">Monthly</option>
+          <option value="yearly">Yearly</option>
+          <option value="daily">Daily</option>
+        </select>
       </form>
       <div>
         <h1> Income {income}</h1>
