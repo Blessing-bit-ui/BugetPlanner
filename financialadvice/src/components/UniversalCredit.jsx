@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
 import { useEffect } from "react";
 function UniversalCredit({onhandleCloseButtons }) {
-useEffect(function(){
+/*useEffect(function(){
   onhandleCloseButtons()
-}, [])
+}, [])*/
     return (
-      <div>
+      <div onClick={onhandleCloseButtons}>
         <header>
           <h1>Universal Credit</h1>
         </header>

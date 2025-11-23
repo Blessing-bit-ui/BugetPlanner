@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Outlet } from "react-router-dom";
@@ -12,7 +12,8 @@ import UniversalCredit from "./components/UniversalCredit";
 import BenefitsForChildren from "./components/BenefitsForChildren";
 import BenefitsSicks from "./components/BenefitsSicks";
 import Benefitslater from "./components/Benefitslater";
-
+import BankingandPayment from "./components/BankingandPayment";
+import Budgeting from "./components/Budgeting";
 
 
 
@@ -104,7 +105,8 @@ function Header() {
   );
 }
 
-function Buttons({benefits, setBenefits, everydayMoney, setEverydayMoney, pensions, setPensions, homes, setHomes, savings, setSavings, work, setWork}) {
+function Buttons({benefits, setBenefits, everydayMoney, setEverydayMoney, pensions, 
+  setPensions, homes, setHomes, savings, setSavings, work, setWork, onhandleCloseButtons}) {
   
 function handleBenefits(){
   setBenefits(benefits === false ? true : false)
@@ -200,7 +202,7 @@ function handleSavings(){
 
       {benefits && (
         <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
-          <Benefit/>
+          <Benefit onhandleCloseButtons={onhandleCloseButtons}/>
         </div>
       )}
       {everydayMoney && (
@@ -232,20 +234,23 @@ function handleSavings(){
   );
 }
 
-function Benefit({}){
+function Benefit({onhandleCloseButtons}){
+  /*useEffect(function(){
+    onhandleCloseButtons()
+  }, [] )*/
   return (
     <div>
       <ul>
         <li>
-          <span>
-            <NavLink
-              to="/benefits/universalbenefits"
-              className="text-pink-500 font-bold hover:underline"
-            >
-              {" "}
-              Universal Credit
-            </NavLink>
-          </span>
+          <NavLink
+            to="/benefits/universalbenefits"
+            className="text-pink-500 font-bold hover:underline"
+            onClick={onhandleCloseButtons}
+          >
+            {" "}
+            Universal Credit
+          </NavLink>
+
           <p>
             Find Out how Universal Credit works and how to manage your payment
           </p>
@@ -255,6 +260,7 @@ function Benefit({}){
             <NavLink
               to="/benefits/benefits-for-children"
               className="text-pink-500 font-bold hover:underline"
+              onClick={onhandleCloseButtons}
             >
               Benefits if you have children
             </NavLink>
@@ -268,6 +274,7 @@ function Benefit({}){
             <NavLink
               to="/benefits/benefits-if-you-sick"
               className="text-pink-500 font-bold hover:underline"
+              onClick={onhandleCloseButtons}
             >
               Benefits if you're sick, disabled or a carer
             </NavLink>
@@ -279,6 +286,7 @@ function Benefit({}){
             <NavLink
               to="/benefits/benefits-later"
               className="text-pink-500 font-bold hover:underline"
+              onClick={onhandleCloseButtons}
             >
               Benefits in Later Life
             </NavLink>

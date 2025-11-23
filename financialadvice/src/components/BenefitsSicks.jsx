@@ -1,9 +1,9 @@
 import {useEffect} from "react"
 function BenefitsSicks({ onhandleCloseButtons }) {
-  useEffect(function (){
+  /*useEffect(function (){
     onhandleCloseButtons()
-  }, []);
-  return <div onClick={()=>onhandleCloseButtons()}>Benefits if sick</div>;
+  }, []);*/
+  return <div onClick={onhandleCloseButtons}>Benefits if sick</div>;
 }
 
 export default BenefitsSicks
