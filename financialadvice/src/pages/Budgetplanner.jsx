@@ -236,214 +236,239 @@ useEffect(
         Budget Planner
       </h1>
       <div className="flex">
-      <form classname="">
-        <h1 className="text-[40px] font-bold text-blue-700">Income</h1>
-        <label className="font-bold"> PAY (after tax) </label> <br />
-        <input
-          type="number"
-          value={pay}
-          onChange={(e) =>
-            dispatch({ type: "pay", payload: Number(e.target.value) })
-          }
-          className="border-[2px] border-blue-500 p-2
+        <form classname="">
+          <h1 className="text-[40px] font-bold text-blue-700">Income</h1>
+          <label className="font-bold"> PAY (after tax) </label> <br />
+          <input
+            type="number"
+            value={pay}
+            onChange={(e) =>
+              dispatch({ type: "pay", payload: Number(e.target.value) })
+            }
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 "
-        />
-        <select
-          value={payPeriod}
-          className="border-[2px] border-blue-500 p-2 ml-2
+          />
+          <select
+            value={payPeriod}
+            className="border-[2px] border-blue-500 p-2 ml-2
     rounded-lg hover:border-[4px] hover:border-red-400 "
-          onChange={(e) =>
-            dispatch({ type: "period", payload: e.target.value })
-          }
-        >
-          <option value="monthly"> Per month</option>
-          <option value="yearly">Per year</option>
-          <option value="daily">per day</option>
-        </select>
-        <br />
-        <label className="font-bold"> Income from Self Employment</label>
-        <br />
-        <input
-          type="number"
-          value={selfEmployment}
-          onChange={(e) =>
-            dispatch({
-              type: "selfemployment",
-              payload: Number(e.target.value),
-            })
-          }
-          className="border-[2px] border-blue-500 p-2
+            onChange={(e) =>
+              dispatch({ type: "period", payload: e.target.value })
+            }
+          >
+            <option value="monthly"> Per month</option>
+            <option value="yearly">Per year</option>
+            <option value="daily">per day</option>
+          </select>
+          <br />
+          <label className="font-bold"> Income from Self Employment</label>
+          <br />
+          <input
+            type="number"
+            value={selfEmployment}
+            onChange={(e) =>
+              dispatch({
+                type: "selfemployment",
+                payload: Number(e.target.value),
+              })
+            }
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 "
-        />
-        <select
-          value={selfEmploymentPeriod}
-          className="border-[2px] border-blue-500 p-2
+          />
+          <select
+            value={selfEmploymentPeriod}
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
-          onChange={(e) =>
-            dispatch({ type: "selfEmploymentPeriod", payload: e.target.value })
-          }
-        >
-          <option value="monthly"> Per month</option>
-          <option value="yearly"> Per year</option>
-          <option value="daily"> Per day</option>
-        </select>{" "}
-        <br />
-        <label className="font-bold">Statutory Sick Pay</label> <br />
-        <input
-          type="number"
-          value={statutory}
-          onChange={(e) =>
-            dispatch({ type: "statutory", payload: Number(e.target.value) })
-          }
-          className="border-[2px] border-blue-500 p-2
+            onChange={(e) =>
+              dispatch({
+                type: "selfEmploymentPeriod",
+                payload: e.target.value,
+              })
+            }
+          >
+            <option value="monthly"> Per month</option>
+            <option value="yearly"> Per year</option>
+            <option value="daily"> Per day</option>
+          </select>{" "}
+          <br />
+          <label className="font-bold">Statutory Sick Pay</label> <br />
+          <input
+            type="number"
+            value={statutory}
+            onChange={(e) =>
+              dispatch({ type: "statutory", payload: Number(e.target.value) })
+            }
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 "
-        />
-        <select
-          value={statutoryPeriod}
-          className="border-[2px] border-blue-500 p-2
+          />
+          <select
+            value={statutoryPeriod}
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
-          onChange={(e) =>
-            dispatch({ type: "statutoryPeriod", payload: e.target.value })
-          }
-        >
-          <option value="monthly">Per month</option>
-          <option value="yearly">Per year</option>
-          <option value="daily">Per Day</option>
-        </select>
-      </form>
-      <form className="ml-5">
-        <h1 className="text-[40px] font-bold text-blue-700">Expenditure</h1>
-        <label className="font-bold">Mortgage repayment</label> <br />
-        <input
-          type="number"
-          value={mortgage}
-          className="border-[2px] border-blue-500 p-2
+            onChange={(e) =>
+              dispatch({ type: "statutoryPeriod", payload: e.target.value })
+            }
+          >
+            <option value="monthly">Per month</option>
+            <option value="yearly">Per year</option>
+            <option value="daily">Per Day</option>
+          </select>
+        </form>
+        <form className="ml-5">
+          <h1 className="text-[40px] font-bold text-blue-700">Expenditure</h1>
+          <label className="font-bold">Mortgage repayment</label> <br />
+          <input
+            type="number"
+            value={mortgage}
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 "
-          onChange={(e) =>
-            dispatch({ type: "mortgage", payload: Number(e.target.value) })
-          }
-        />
-        <select
-          value={mortgagePeriod}
-          className="border-[2px] border-blue-500 p-2
+            onChange={(e) =>
+              dispatch({ type: "mortgage", payload: Number(e.target.value) })
+            }
+          />
+          <select
+            value={mortgagePeriod}
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
-          onChange={(e) =>
-            dispatch({ type: "mortgagePeriod", payload: e.target.value })
-          }
-        >
-          <option value="monthly">Per month</option>
-          <option value="yearly">Per year</option>
-          <option value="daily">Per Day</option>
-        </select>
-        <br />
-        <label className="font-bold">Rent</label> <br />
-        <input
-          type="number"
-          value={rent}
-          className="border-[2px] border-blue-500 p-2
+            onChange={(e) =>
+              dispatch({ type: "mortgagePeriod", payload: e.target.value })
+            }
+          >
+            <option value="monthly">Per month</option>
+            <option value="yearly">Per year</option>
+            <option value="daily">Per Day</option>
+          </select>
+          <br />
+          <label className="font-bold">Rent</label> <br />
+          <input
+            type="number"
+            value={rent}
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 "
-          onChange={(e) =>
-            dispatch({ type: "rent", payload: Number(e.target.value) })
-          }
-        />
-        <select
-          value={rentPeriod}
-          className="border-[2px] border-blue-500 p-2
+            onChange={(e) =>
+              dispatch({ type: "rent", payload: Number(e.target.value) })
+            }
+          />
+          <select
+            value={rentPeriod}
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
-          onChange={(e) =>
-            dispatch({ type: "rentPeriod", payload: e.target.value })
-          }
-        >
-          <option value="monthly">Per month</option>
-          <option value="yearly">Per year</option>
-          <option value="daily">Per Day</option>
-        </select>
-        <br />
-        <label className="font-bold"> Grocery Shopping </label>
-        <br />
-        <input
-          type="number"
-          value={shopping}
-          className="border-[2px] border-blue-500 p-2
+            onChange={(e) =>
+              dispatch({ type: "rentPeriod", payload: e.target.value })
+            }
+          >
+            <option value="monthly">Per month</option>
+            <option value="yearly">Per year</option>
+            <option value="daily">Per Day</option>
+          </select>
+          <br />
+          <label className="font-bold"> Grocery Shopping </label>
+          <br />
+          <input
+            type="number"
+            value={shopping}
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 "
-          onChange={(e) =>
-            dispatch({ type: "shopping", payload: Number(e.target.value) })
-          }
-        />
-        <select
-          value={shoppingPeriod}
-          className="border-[2px] border-blue-500 p-2
+            onChange={(e) =>
+              dispatch({ type: "shopping", payload: Number(e.target.value) })
+            }
+          />
+          <select
+            value={shoppingPeriod}
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
-          onChange={(e) =>
-            dispatch({ type: "shoppingPeriod", payload: e.target.value })
-          }
-        >
-          <option value="monthly">Per month</option>
-          <option value="yearly">Per year</option>
-          <option value="daily">Per Day</option>
-        </select>{" "}
-        <br />
-        <label className="font-bold">Travel</label>
-        <br />
-        <input
-          type="number"
-          value={travel}
-          className="border-[2px] border-blue-500 p-2
+            onChange={(e) =>
+              dispatch({ type: "shoppingPeriod", payload: e.target.value })
+            }
+          >
+            <option value="monthly">Per month</option>
+            <option value="yearly">Per year</option>
+            <option value="daily">Per Day</option>
+          </select>{" "}
+          <br />
+          <label className="font-bold">Travel</label>
+          <br />
+          <input
+            type="number"
+            value={travel}
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400"
-          onChange={(e) =>
-            dispatch({ type: "travel", payload: Number(e.target.value) })
-          }
-        />
-        <select
-          value={travelPeriod}
-          className="border-[2px] border-blue-500 p-2
+            onChange={(e) =>
+              dispatch({ type: "travel", payload: Number(e.target.value) })
+            }
+          />
+          <select
+            value={travelPeriod}
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
-          onChange={(e) =>
-            dispatch({ type: "travelPeriod", payload: e.target.value })
-          }
-        >
-          <option value="monthly">Per month</option>
-          <option value="yearly">Per year</option>
-          <option value="daily">Per Day</option>
-        </select>{" "}
-        <br />
-        <label className="font-bold">Children Expenses</label>
-        <br />
-        <input
-          type="number"
-          value={children}
-          className="border-[2px] border-blue-500 p-2
+            onChange={(e) =>
+              dispatch({ type: "travelPeriod", payload: e.target.value })
+            }
+          >
+            <option value="monthly">Per month</option>
+            <option value="yearly">Per year</option>
+            <option value="daily">Per Day</option>
+          </select>{" "}
+          <br />
+          <label className="font-bold">Children Expenses</label>
+          <br />
+          <input
+            type="number"
+            value={children}
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 "
-          onChange={(e) =>
-            dispatch({ type: "children", payload: Number(e.target.value) })
-          }
-        />
-        <select
-          value={childrenPeriod}
-          className="border-[2px] border-blue-500 p-2
+            onChange={(e) =>
+              dispatch({ type: "children", payload: Number(e.target.value) })
+            }
+          />
+          <select
+            value={childrenPeriod}
+            className="border-[2px] border-blue-500 p-2
     rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
-          onChange={(e) =>
-            dispatch({ type: "childrenPeriod", payload: e.target.value })
-          }
+            onChange={(e) =>
+              dispatch({ type: "childrenPeriod", payload: e.target.value })
+            }
+          >
+            <option value="monthly">Per month</option>
+            <option value="yearly">Per year</option>
+            <option value="daily">Per Day</option>
+          </select>
+        </form>
+
+        <section
+          className="border p-2 ml-5 mt-5
+    rounded-lg"
         >
-          <option value="monthly">Per month</option>
-          <option value="yearly">Per year</option>
-          <option value="daily">Per Day</option>
-        </select>
-      </form>
-      
-      <div>
-        <h1> Income {income}</h1>
-        <h1> Spending {spending}</h1>
-        <h1>
-          {income > spending
-            ? "Spare Cash"
-            : spending > income
-            ? " OverSpending"
-            : "Balance"}
-          {Balance}
-        </h1>
-      </div>
+          <h1 className="font-bold text-[25px] ">
+            Your Progress <span>(monthly)</span>
+          </h1>
+          <h2 className="border-none bg-gray-200 p-4 mb-2 font-dancing justify-between flex">
+            {" "}
+           <span>Income</span> <span> {income} </span>
+          </h2>
+          <h2 className="border-none bg-gray-200 p-4 mb-2 font-dancing justify-between flex ">
+            {" "}
+             <span>Spending </span> <span>{spending}</span>
+          </h2>
+          <h2
+            className={`border-none  p-4 mb-2 font-dancing justify-between flex ${
+              income > spending
+                ? "bg-green-500"
+                : spending > income
+                ? "bg-red-500"
+                : "bg-gray-200"
+            }`}
+          >
+           <span> {income > spending
+              ? "Spare Cash"
+              : spending > income
+              ? " OverSpending"
+              : "Balance"}
+              </span>
+              <span>{Balance}</span>
+            
+          </h2>
+        </section>
       </div>
     </div>
   );}
