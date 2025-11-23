@@ -6,7 +6,6 @@ useEffect(function(){
 }, [])
     return (
       <div>
-     
         <header>
           <h1>Universal Credit</h1>
         </header>

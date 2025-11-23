@@ -3,12 +3,16 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import {NavLink} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Everyday from "./pages/Everyday";
 import PageNav from "./pages/PageNav";
-import Benefits from "./pages/Benefits"
+import Benefits from "./pages/Benefits";
 import UniversalCredit from "./components/UniversalCredit";
-import { useNavigate } from "react-router-dom";
+import BenefitsForChildren from "./components/BenefitsForChildren";
+import BenefitsSicks from "./components/BenefitsSicks";
+import Benefitslater from "./components/Benefitslater";
+
 
 
 
@@ -22,7 +26,7 @@ function App() {
 
 function handleCloseButtons(){
 setBenefits(benefits === true  && false)
-setEverydayMoney(everydayMoney=== true && false)
+setEverydayMoney(everydayMoney === true && false)
 setPensions(pensions === true && false)
 setHomes(homes === true && false)
 setWork(work === true && false)
@@ -46,6 +50,7 @@ setSavings(savings === true && false)
           setWork={setWork}
           savings={savings}
           setSavings={setSavings}
+          onhandleCloseButtons={handleCloseButtons}
         />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -58,6 +63,24 @@ setSavings(savings === true && false)
             path="benefits/universalbenefits"
             element={
               <UniversalCredit onhandleCloseButtons={handleCloseButtons} />
+            }
+          />
+          <Route
+            path="benefits/benefits-for-children"
+            element={
+              <BenefitsForChildren onhandleCloseButtons={handleCloseButtons} />
+            }
+          />
+          <Route
+            path="benefits/benefits-if-you-sick"
+            element={
+              <BenefitsSicks onhandleCloseButtons={handleCloseButtons} />
+            }
+          />
+          <Route
+            path="benefits/benefits-later"
+            element={
+              <Benefitslater onhandleCloseButtons={handleCloseButtons} />
             }
           />
         </Routes>
@@ -177,7 +200,7 @@ function handleSavings(){
 
       {benefits && (
         <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
-          <Benefit />
+          <Benefit/>
         </div>
       )}
       {everydayMoney && (
@@ -209,7 +232,7 @@ function handleSavings(){
   );
 }
 
-function Benefit(){
+function Benefit({}){
   return (
     <div>
       <ul>
@@ -228,24 +251,38 @@ function Benefit(){
           </p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/benefits/benefits-if-you-have-children">
-            Benefits if you have children
-          </a>
+          <span>
+            <NavLink
+              to="/benefits/benefits-for-children"
+              className="text-pink-500 font-bold hover:underline"
+            >
+              Benefits if you have children
+            </NavLink>
+          </span>
           <p>
             Entitlement to help with the cost of Pregnancy or bring up children
           </p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/benefits/benefits-if-youre-sick-disabled-or-a-carer">
-            {" "}
-            Benefits if you're sick, disabled or a carer
-          </a>
+          <span>
+            <NavLink
+              to="/benefits/benefits-if-you-sick"
+              className="text-pink-500 font-bold hover:underline"
+            >
+              Benefits if you're sick, disabled or a carer
+            </NavLink>
+          </span>
           <p>Understand what support to available for coping with itt health</p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/benefits/benefits-in-later-life">
-            Benefits in Later Life
-          </a>
+          <span>
+            <NavLink
+              to="/benefits/benefits-later"
+              className="text-pink-500 font-bold hover:underline"
+            >
+              Benefits in Later Life
+            </NavLink>
+          </span>
           <p>
             {" "}
             You may be entitled for help with other coasts on top of your State
