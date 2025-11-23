@@ -222,8 +222,8 @@ useEffect(
 
   useEffect(
     function () {
-      dispatch({ type: "income" });
-      dispatch({type : "spending"});
+      dispatch({ type: "income" , payload :income});
+      dispatch({type : "spending", payload: spending});
     },
     [pay, selfEmployment, statutory, mortgage, rent, shopping, travel, children]
   )
@@ -231,31 +231,38 @@ useEffect(
   const Balance = income-spending 
 
   return (
-    <div className="w-[300px] ml-5 p-2 ">
+    <div className=" ml-5 p-2 border">
       <h1 className="text-pink-500 font-bold text-xl underline mb-2">
         Budget Planner
       </h1>
-      <form>
-        <label className="font-bold"> PAY (after tax)</label>
+      <div className="flex">
+      <form classname="">
+        <h1 className="text-[40px] font-bold text-blue-700">Income</h1>
+        <label className="font-bold"> PAY (after tax) </label> <br />
         <input
           type="number"
           value={pay}
           onChange={(e) =>
             dispatch({ type: "pay", payload: Number(e.target.value) })
           }
-          className="border-[2px]"
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 "
         />
         <select
           value={payPeriod}
+          className="border-[2px] border-blue-500 p-2 ml-2
+    rounded-lg hover:border-[4px] hover:border-red-400 "
           onChange={(e) =>
             dispatch({ type: "period", payload: e.target.value })
           }
         >
-          <option value="monthly">Monthly</option>
-          <option value="yearly">Yearly</option>
-          <option value="daily">Daily</option>
+          <option value="monthly"> Per month</option>
+          <option value="yearly">Per year</option>
+          <option value="daily">per day</option>
         </select>
-        <label> Income from Self Employment</label>
+        <br />
+        <label className="font-bold"> Income from Self Employment</label>
+        <br />
         <input
           type="number"
           value={selfEmployment}
@@ -265,136 +272,166 @@ useEffect(
               payload: Number(e.target.value),
             })
           }
-          className="border-[1px]"
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 "
         />
         <select
           value={selfEmploymentPeriod}
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
           onChange={(e) =>
             dispatch({ type: "selfEmploymentPeriod", payload: e.target.value })
           }
         >
-          <option value="monthly">Monthly</option>
-          <option value="yearly">Yearly</option>
-          <option value="daily">Daily</option>
-        </select>
-        <label>Statutory Sick Pay</label>
+          <option value="monthly"> Per month</option>
+          <option value="yearly"> Per year</option>
+          <option value="daily"> Per day</option>
+        </select>{" "}
+        <br />
+        <label className="font-bold">Statutory Sick Pay</label> <br />
         <input
           type="number"
           value={statutory}
           onChange={(e) =>
             dispatch({ type: "statutory", payload: Number(e.target.value) })
           }
-          className="border-[1px]"
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 "
         />
-
         <select
           value={statutoryPeriod}
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
           onChange={(e) =>
             dispatch({ type: "statutoryPeriod", payload: e.target.value })
           }
         >
-          <option value="monthly">Monthly</option>
-          <option value="yearly">Yearly</option>
-          <option value="daily">Daily</option>
+          <option value="monthly">Per month</option>
+          <option value="yearly">Per year</option>
+          <option value="daily">Per Day</option>
         </select>
       </form>
-      <form>
-        <label>Mortgage repayment</label>
+      <form className="ml-5">
+        <h1 className="text-[40px] font-bold text-blue-700">Expenditure</h1>
+        <label className="font-bold">Mortgage repayment</label> <br />
         <input
           type="number"
           value={mortgage}
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 "
           onChange={(e) =>
             dispatch({ type: "mortgage", payload: Number(e.target.value) })
           }
-          class="border-[1px]"
         />
         <select
           value={mortgagePeriod}
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
           onChange={(e) =>
             dispatch({ type: "mortgagePeriod", payload: e.target.value })
           }
         >
-          <option value="monthly">Monthly</option>
-          <option value="yearly">Yearly</option>
-          <option value="daily">Daily</option>
+          <option value="monthly">Per month</option>
+          <option value="yearly">Per year</option>
+          <option value="daily">Per Day</option>
         </select>
-        <label> Rent</label>
+        <br />
+        <label className="font-bold">Rent</label> <br />
         <input
           type="number"
           value={rent}
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 "
           onChange={(e) =>
             dispatch({ type: "rent", payload: Number(e.target.value) })
           }
-          className="border-[1px]"
         />
         <select
           value={rentPeriod}
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
           onChange={(e) =>
             dispatch({ type: "rentPeriod", payload: e.target.value })
           }
         >
-          <option value="monthly">Monthly</option>
-          <option value="yearly">Yearly</option>
-          <option value="daily">Daily</option>
+          <option value="monthly">Per month</option>
+          <option value="yearly">Per year</option>
+          <option value="daily">Per Day</option>
         </select>
-        <label> Grocery Shopping </label>
+        <br />
+        <label className="font-bold"> Grocery Shopping </label>
+        <br />
         <input
           type="number"
           value={shopping}
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 "
           onChange={(e) =>
             dispatch({ type: "shopping", payload: Number(e.target.value) })
           }
-          className="border-[1px]"
         />
         <select
           value={shoppingPeriod}
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
           onChange={(e) =>
             dispatch({ type: "shoppingPeriod", payload: e.target.value })
           }
         >
-          <option value="monthly">Monthly</option>
-          <option value="yearly">Yearly</option>
-          <option value="daily">Daily</option>
-        </select>
-        <label>Travel</label>
+          <option value="monthly">Per month</option>
+          <option value="yearly">Per year</option>
+          <option value="daily">Per Day</option>
+        </select>{" "}
+        <br />
+        <label className="font-bold">Travel</label>
+        <br />
         <input
           type="number"
           value={travel}
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400"
           onChange={(e) =>
             dispatch({ type: "travel", payload: Number(e.target.value) })
           }
-          className="border-[1px]"
         />
         <select
           value={travelPeriod}
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
           onChange={(e) =>
             dispatch({ type: "travelPeriod", payload: e.target.value })
           }
         >
-          <option value="monthly">Monthly</option>
-          <option value="yearly">Yearly</option>
-          <option value="daily">Daily</option>
-        </select>
-        <label>Children Expenses</label>
+          <option value="monthly">Per month</option>
+          <option value="yearly">Per year</option>
+          <option value="daily">Per Day</option>
+        </select>{" "}
+        <br />
+        <label className="font-bold">Children Expenses</label>
+        <br />
         <input
           type="number"
           value={children}
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 "
           onChange={(e) =>
             dispatch({ type: "children", payload: Number(e.target.value) })
           }
-          className="border-[1px]"
         />
         <select
           value={childrenPeriod}
+          className="border-[2px] border-blue-500 p-2
+    rounded-lg hover:border-[4px] hover:border-red-400 ml-2"
           onChange={(e) =>
             dispatch({ type: "childrenPeriod", payload: e.target.value })
           }
         >
-          <option value="monthly">Monthly</option>
-          <option value="yearly">Yearly</option>
-          <option value="daily">Daily</option>
+          <option value="monthly">Per month</option>
+          <option value="yearly">Per year</option>
+          <option value="daily">Per Day</option>
         </select>
       </form>
+      
       <div>
         <h1> Income {income}</h1>
         <h1> Spending {spending}</h1>
@@ -406,6 +443,7 @@ useEffect(
             : "Balance"}
           {Balance}
         </h1>
+      </div>
       </div>
     </div>
   );}
