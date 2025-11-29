@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Everyday from "./pages/Everyday";
 import Pension from "./pages/Pension";
+import Saving from "./pages/Saving"
 import PageNav from "./pages/PageNav";
 import Benefits from "./pages/Benefits";
 import UniversalCredit from "./components/UniversalCredit";
@@ -26,6 +27,17 @@ import StatePension from "./components/StatePension";
 import TaxPension from "./components/TaxPension"
 import PensionTransfer from './components/PensionTransfer'
 import Taxandretirement from "./components/taxandretirement";
+import HowtoSave from "./components/HowtoSave";
+import Investing from "./components/Investing";
+import TypeofSavings from "./components/TypeofSavings";
+import AllSavings from "./components/AllSavings";
+import Employment from "./components/Employment";
+import Losingyourjob from "./components/Losingyourjob";
+import Selfemploment from "./components/Selfemploment";
+import Allwork from "./components/Allwork";
+import Homess from "./components/Homess";
+import Mortgage from "./components/Mortgage";
+import Renting from "./components/Renting";
 
 
 
@@ -67,6 +79,7 @@ setSavings(savings === true && false)
         />
         <Routes>
           <Route path="/" element={<Home />} />
+
           <Route
             path="everyday"
             element={<Everyday onhandleCloseButtons={handleCloseButtons} />}
@@ -111,16 +124,32 @@ setSavings(savings === true && false)
             path="pension"
             element={<Pension onhandleCloseButtons={handleCloseButtons} />}
           />
-          < Route path="pension/managegrow"
-          element={<ManageandGrow/>}
+          <Route path="pension/managegrow" element={<ManageandGrow />} />
+          <Route path="pension/pensionexplain" element={<PensionExplain />} />
+          <Route
+            path="pension/pensionproblems"
+            element={<PensionsProblems />}
           />
-          <Route path="pension/pensionexplain" element={<PensionExplain/>}/>
-          <Route path="pension/pensionproblems" element={<PensionsProblems/>}/>
-          <Route path="pension/pensiontranfer" element={<PensionTransfer/>}/>
-          <Route path="pension/statepension" element={<StatePension/>}/>
-          <Route path="pension/takingpension" element={<TakingPension/>}/>
-          <Route path="pension/taxpension" element={<TaxPension/>}/>
-          <Route path="pension/taxandretirement" element={<Taxandretirement/>}/> 
+          <Route path="pension/pensiontranfer" element={<PensionTransfer />} />
+          <Route path="pension/statepension" element={<StatePension />} />
+          <Route path="pension/takingpension" element={<TakingPension />} />
+          <Route path="pension/taxpension" element={<TaxPension />} />
+          <Route
+            path="pension/taxandretirement"
+            element={<Taxandretirement />}
+          />
+          <Route path="saving" element={<Saving />} />
+          <Route path="saving/howtosave" element={<HowtoSave />} />
+          <Route path="saving/investing" element={<Investing />} />
+          <Route path="saving/typeofsavings" element={<TypeofSavings />} />
+          <Route path="work" element={<Work />} />
+          <Route path="work/employment" element={<Employment />} />
+          <Route path="work/losingyourjob" element={<Losingyourjob />} />
+          <Route path="work/selfemployment" element={<Selfemploment />} />
+          <Route path="work/allwork" element={<Allwork />} />
+          <Route path="homes" element={<Homess/>} />
+          <Route path="homes/mortgage" element={<Mortgage />} />
+          <Route path="homes/renting" element={<Renting />} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -473,27 +502,41 @@ function Savings() {
     <div>
       <ul>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/savings/how-to-save">
+          <NavLink
+            to="/saving/howtosave"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
             How to save
-          </a>
+          </NavLink>
           <p>Getting starting, getting the most out of savings problems</p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/savings/investing">
+          <NavLink
+            to="/saving/investing"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
             Investing
-          </a>
+          </NavLink>
           <p>How to invest types of investing, buying and managing</p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/savings/types-of-savings">
+          <NavLink
+            to="/saving/typeofsavings"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
             Types of savings
-          </a>
+          </NavLink>
           <p>
             Help with meeting goals, tax-friendly saving, saving for Children
           </p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/savings">Savings</a>
+          <NavLink
+            to="/saving/allsavings"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
+            Savings
+          </NavLink>
           <p>All savings guidance</p>
         </li>
       </ul>
@@ -506,25 +549,39 @@ function Work() {
     <div>
       <ul>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/work/employment">
+          <NavLink
+            to="/work/employment"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
             Employment
-          </a>
+          </NavLink>
           <p>Basic, benefits, tax and National Insurance</p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/work/losing-your-job">
+          <NavLink
+            to="/work/losingyourjob"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
             Losing your Job
-          </a>
+          </NavLink>
           <p>What to do, alternatives, redunctancy </p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/work/self-employment">
+          <NavLink
+            to="/work/selfemployment"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
             Self-Employment
-          </a>
+          </NavLink>
           <p>Starting out, insurance, tax, self-assessment</p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/work">Work</a>
+          <NavLink
+            to="/work/allwork"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
+            Work
+          </NavLink>
           <p>All work guidance</p>
         </li>
       </ul>
@@ -536,20 +593,18 @@ function Homes() {
     <div>
       <ul>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/homes/buying-a-home">
-            Mortages and Homebuying
-          </a>
+          <NavLink to="/homes/mortgage">Mortages and Homebuying</NavLink>
           <p>
             Mortages, help buying, remortgaging, first-time buyers, help and
             support
           </p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/homes/renting">Renting</a>
+          <NavLink to="/homes/renting">Renting</NavLink>
           <p>Help rent a home and dealing with problems</p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/homes">Homes</a>
+          <NavLink to="/homes">Homes</NavLink>
           <p>All Homes guidance</p>
         </li>
       </ul>

@@ -1,4 +1,4 @@
-function Savings() {
+function Saving() {
     return (
         <div>
             Savings
@@ -6,5 +6,4 @@ function Savings() {
     )
 }
 
-export default Savings
-Savings
+export default Saving
