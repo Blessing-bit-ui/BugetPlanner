@@ -6,6 +6,7 @@ import {NavLink} from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Everyday from "./pages/Everyday";
+import Pension from "./pages/Pension";
 import PageNav from "./pages/PageNav";
 import Benefits from "./pages/Benefits";
 import UniversalCredit from "./components/UniversalCredit";
@@ -17,6 +18,14 @@ import Budgeting from "./components/Budgeting";
 import Buyingandrunning from "./components/Buyingandrunning";
 import Credit from "./components/Credit";
 import Insurance from "./components/Insurance"
+import ManageandGrow from "./components/ManageandGrow";
+import PensionExplain from "./components/PensionExplain";
+import TakingPension from "./components/TakingPension";
+import PensionsProblems from "./components/PensionsProblems";
+import StatePension from "./components/StatePension";
+import TaxPension from "./components/TaxPension"
+import PensionTransfer from './components/PensionTransfer'
+import Taxandretirement from "./components/taxandretirement";
 
 
 
@@ -98,6 +107,20 @@ setSavings(savings === true && false)
               <Benefitslater onhandleCloseButtons={handleCloseButtons} />
             }
           />
+          <Route
+            path="pension"
+            element={<Pension onhandleCloseButtons={handleCloseButtons} />}
+          />
+          < Route path="pension/managegrow"
+          element={<ManageandGrow/>}
+          />
+          <Route path="pension/pensionexplain" element={<PensionExplain/>}/>
+          <Route path="pension/pensionproblems" element={<PensionsProblems/>}/>
+          <Route path="pension/pensiontranfer" element={<PensionTransfer/>}/>
+          <Route path="pension/statepension" element={<StatePension/>}/>
+          <Route path="pension/takingpension" element={<TakingPension/>}/>
+          <Route path="pension/taxpension" element={<TaxPension/>}/>
+          <Route path="pension/taxandretirement" element={<Taxandretirement/>}/> 
         </Routes>
       </BrowserRouter>
     </div>
@@ -369,50 +392,75 @@ function Pensions() {
     <div>
       <ul>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/pensions-and-retirement/building-your-retirement-pot">
-            Building your retirement pot
-          </a>
+          <NavLink
+            to="/pension/managegrow"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
+            {" "}
+            Manage and grow your Pension
+          </NavLink>
           <p>
             How much do you need, ways to build your pot, transferring merging
           </p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/pensions-and-retirement/pensions-basics">
+          <NavLink
+            to="/pension/pensionexplain"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
+            {" "}
             Pension explained
-          </a>
+          </NavLink>
           <p>Starting a pension, types of pension, understanding pensions</p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/pensions-and-retirement/pension-problems">
+          <NavLink
+            to="/pension/pensionproblems"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
             Pension problems
-          </a>
+          </NavLink>
           <p> Complaints, financial help when retired, changes to schemes</p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/pensions-and-retirement/state-pension">
+          <NavLink
+            to="/pension/statepension"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
             State Pension
-          </a>
+          </NavLink>
           <p>How it works, what you might get, National Insurance</p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/pensions-and-retirement/taking-your-pension">
+          <NavLink
+            to="/pension/takingpension"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
+            {" "}
             Taking your pension
-          </a>
+          </NavLink>
           <p>
             Ways to draw your pension, when can you retire, Pension Wise
             appointments
           </p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/pensions-and-retirement/tax-and-pensions">
+          <NavLink
+            to="/pension/taxpension"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
+            {" "}
             Tax and Pensions
-          </a>
+          </NavLink>
           <p>Tax allowances, tax paid on pensions, tax relief</p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/pensions-and-retirement">
-            Pensions and retirement
-          </a>
+          <NavLink
+            to="/pension/taxandretirement"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          
+            > Pensions and retirement
+          </NavLink>
           <p>All guidance, including how to use the Pension Wise service</p>
         </li>
       </ul>

@@ -1,4 +1,4 @@
-function Pensions() {
+function Pension() {
     return (
         <div>
            Pension 
@@ -6,4 +6,4 @@ function Pensions() {
     )
 }
 
-export default Pensions
+export default Pension
