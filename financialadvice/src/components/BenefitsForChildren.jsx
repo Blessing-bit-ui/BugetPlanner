@@ -11,7 +11,7 @@ function BenefitsForChildren({onhandleCloseButtons}) {
         <h1 className="text-blue-600 font-bold text-[40px]">Benefits for children </h1>
       </div>
       <div className="flex mr-auto ml-auto">
-        <span className="p-3">
+        <summary className="p-3">
           Having a baby is both exciting and costly but there are a number of
           benefits and entitlements available to give a boost to your family
           budget.
@@ -23,7 +23,7 @@ function BenefitsForChildren({onhandleCloseButtons}) {
           £50,000. This section details your options if your family has low
           income or if you’re looking for financial support during or after your
           pregnancy.
-        </span>
+        </summary>
         <img src="https://www.shutterstock.com/image-photo/happy-young-black-dad-spoon-600nw-2003206955.jpg" />
       </div>
     </div>
