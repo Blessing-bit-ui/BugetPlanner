@@ -14,6 +14,9 @@ import BenefitsSicks from "./components/BenefitsSicks";
 import Benefitslater from "./components/Benefitslater";
 import BankingandPayment from "./components/BankingandPayment";
 import Budgeting from "./components/Budgeting";
+import Buyingandrunning from "./components/Buyingandrunning";
+import Credit from "./components/Credit";
+import Insurance from "./components/Insurance"
 
 
 
@@ -59,6 +62,17 @@ setSavings(savings === true && false)
             path="everyday"
             element={<Everyday onhandleCloseButtons={handleCloseButtons} />}
           />
+          <Route
+            path="everyday/bankingandpayments"
+            element={<BankingandPayment />}
+          />
+          <Route path="everyday/budgeting" element={<Budgeting />} />
+          <Route
+            path="everyday/buyingandrunning"
+            element={<Buyingandrunning />}
+          />
+          <Route path="everyday/credit" element={<Credit />} />
+          <Route path="everyday/insurance" element={<Insurance />} />
           <Route path="benefits" element={<Benefits />} />
           <Route
             path="benefits/universalbenefits"
@@ -307,39 +321,42 @@ function EverdayMoney() {
     <div>
       <ul>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/everyday-money/banking">
+          <NavLink
+            to="/everyday/bankingandpayments"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
             Banking and Payments
-          </a>
+          </NavLink>
           <p>How to choose, use and manage bank accounts</p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/everyday-money/budgeting">
+          <NavLink to="/everyday/budgeting" className="text-purple-500 font-bold text-[20px] hover:underline">
             Budgeting
-          </a>
+          </NavLink>
           <p>How to budget, find the best deals and switch to save money</p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/everyday-money/buying-and-running-a-car">
+          <NavLink to="/everyday/buyingandrunning" className="text-purple-500 font-bold text-[20px] hover:underline">
             Buying and running a car
-          </a>
+          </NavLink>
           <p>
             How to buy and finance a car, deal with problems with car finance
             and cut running
           </p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/everyday-money/credit">
+          <NavLink to="/everyday/credit" className="text-purple-500 font-bold text-[20px] hover:underline">
             Credit
-          </a>
+          </NavLink>
           <p>
             Credit basics, applying for credit, credit rating and problems with
             credit
           </p>
         </li>
         <li>
-          <a href="https://www.moneyhelper.org.uk/en/everyday-money/insurance">
+          <NavLink to="/everyday/insurance" className="text-purple-500 font-bold text-[20px] hover:underline">
             Insurance
-          </a>
+          </NavLink>
           <p> Insurance for cars, health travel and help with Insurance</p>
         </li>
       </ul>
