@@ -593,18 +593,33 @@ function Homes() {
     <div>
       <ul>
         <li>
-          <NavLink to="/homes/mortgage">Mortages and Homebuying</NavLink>
+          <NavLink
+            to="/homes/mortgage"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
+            Mortages and Homebuying
+          </NavLink>
           <p>
             Mortages, help buying, remortgaging, first-time buyers, help and
             support
           </p>
         </li>
         <li>
-          <NavLink to="/homes/renting">Renting</NavLink>
+          <NavLink
+            to="/homes/renting"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
+            Renting
+          </NavLink>
           <p>Help rent a home and dealing with problems</p>
         </li>
         <li>
-          <NavLink to="/homes">Homes</NavLink>
+          <NavLink
+            to="/homes"
+            className="text-purple-500 font-bold text-[20px] hover:underline"
+          >
+            Homes
+          </NavLink>
           <p>All Homes guidance</p>
         </li>
       </ul>
