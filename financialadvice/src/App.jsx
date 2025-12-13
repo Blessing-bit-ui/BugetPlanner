@@ -38,11 +38,17 @@ import Allwork from "./components/Allwork";
 import Homess from "./components/Homess";
 import Mortgage from "./components/Mortgage";
 import Renting from "./components/Renting";
+import { useAppStates } from "./hooks/useAppStates";
+import { useButtons } from "./hooks/useButtons";
+
+
+
+
 
 
 
 function App() {
-  const [benefits, setBenefits] = useState(false);
+ /* const [benefits, setBenefits] = useState(false);
   const [everydayMoney, setEverydayMoney] = useState(false);
   const [pensions, setPensions] = useState(false);
   const [homes, setHomes] = useState(false);
@@ -56,33 +62,21 @@ setPensions(pensions === true && false)
 setHomes(homes === true && false)
 setWork(work === true && false)
 setSavings(savings === true && false)
-}
+}*/
+
 
   return (
     <div>
       <Header />
       <BrowserRouter>
         <Buttons
-          benefits={benefits}
-          setBenefits={setBenefits}
-          everydayMoney={everydayMoney}
-          setEverydayMoney={setEverydayMoney}
-          pensions={pensions}
-          setPensions={setPensions}
-          homes={homes}
-          setHomes={setHomes}
-          work={work}
-          setWork={setWork}
-          savings={savings}
-          setSavings={setSavings}
-          onhandleCloseButtons={handleCloseButtons}
-        />
+         />
         <Routes>
           <Route path="/" element={<Home />} />
 
           <Route
             path="everyday"
-            element={<Everyday onhandleCloseButtons={handleCloseButtons} />}
+            element={<Everyday />}
           />
           <Route
             path="everyday/bankingandpayments"
@@ -99,30 +93,30 @@ setSavings(savings === true && false)
           <Route
             path="benefits/universalbenefits"
             element={
-              <UniversalCredit onhandleCloseButtons={handleCloseButtons} />
+              <UniversalCredit  />
             }
           />
           <Route
             path="benefits/benefits-for-children"
             element={
-              <BenefitsForChildren onhandleCloseButtons={handleCloseButtons} />
+              <BenefitsForChildren  />
             }
           />
           <Route
             path="benefits/benefits-if-you-sick"
             element={
-              <BenefitsSicks onhandleCloseButtons={handleCloseButtons} />
+              <BenefitsSicks  />
             }
           />
           <Route
             path="benefits/benefits-later"
             element={
-              <Benefitslater onhandleCloseButtons={handleCloseButtons} />
+              <Benefitslater  />
             }
           />
           <Route
             path="pension"
-            element={<Pension onhandleCloseButtons={handleCloseButtons} />}
+            element={<Pension  />}
           />
           <Route path="pension/managegrow" element={<ManageandGrow />} />
           <Route path="pension/pensionexplain" element={<PensionExplain />} />
@@ -171,59 +165,17 @@ function Header() {
   );
 }
 
-function Buttons({benefits, setBenefits, everydayMoney, setEverydayMoney, pensions, 
-  setPensions, homes, setHomes, savings, setSavings, work, setWork, onhandleCloseButtons}) {
-  
-function handleBenefits(){
-  setBenefits(benefits === false ? true : false)
-  setEverydayMoney(false)
-  setPensions(false)
-  setHomes(false)
-  setWork(false)
-  setSavings(false)
-}
-function handleEveryDay(){
-  setEverydayMoney(everydayMoney === false ? true : false)
-  setBenefits(false)
-  setPensions(false)
-  setHomes(false)
-  setWork(false)
-  setSavings(false)
-}
-
-function handlePensions(){
-  setPensions(pensions=== false ? true : false)
-  setEverydayMoney(false)
-  setBenefits(false)
-  setHomes(false)
-  setWork(false)
-  setSavings(false)
-}
-function handleHomes(){
-  setHomes(homes === false ? true : false)
-  setEverydayMoney(false)
-  setPensions(false)
-  setBenefits(false)
-  setWork(false)
-  setSavings(false)
-}
-
-function handleWork(){
-  setWork(work === false ? true : false)
-  setEverydayMoney(false)
-  setPensions(false)
-  setHomes(false)
-  setBenefits(false)
-  setSavings(false)
-}
-function handleSavings(){
-  setSavings(savings === false ? true : false)
-  setEverydayMoney(false)
-  setPensions(false)
-  setHomes(false)
-  setWork(false)
-  setBenefits(false)
-}
+function Buttons() {
+  const {handleBenefits, handleEveryDay, handlePensions, handleHomes, handleWork, handleSavings} =useButtons()
+  const {
+    benefits,
+    everydayMoney,
+    pensions,
+    homes,
+    work,
+    savings,
+    
+  } = useAppStates();
 
   return (
     <div className="relative">
@@ -304,6 +256,8 @@ function Benefit({onhandleCloseButtons}){
   /*useEffect(function(){
     onhandleCloseButtons()
   }, [] )*/
+
+  const {handleCloseButtons} = useAppStates()
   return (
     <div>
       <ul>
@@ -311,7 +265,7 @@ function Benefit({onhandleCloseButtons}){
           <NavLink
             to="/benefits/universalbenefits"
             className="text-pink-500 font-bold hover:underline"
-            onClick={onhandleCloseButtons}
+            onClick={handleCloseButtons}
           >
             {" "}
             Universal Credit
@@ -326,7 +280,7 @@ function Benefit({onhandleCloseButtons}){
             <NavLink
               to="/benefits/benefits-for-children"
               className="text-pink-500 font-bold hover:underline"
-              onClick={onhandleCloseButtons}
+              onClick={handleCloseButtons}
             >
               Benefits if you have children
             </NavLink>
@@ -340,7 +294,7 @@ function Benefit({onhandleCloseButtons}){
             <NavLink
               to="/benefits/benefits-if-you-sick"
               className="text-pink-500 font-bold hover:underline"
-              onClick={onhandleCloseButtons}
+              onClick={handleCloseButtons}
             >
               Benefits if you're sick, disabled or a carer
             </NavLink>
@@ -352,7 +306,7 @@ function Benefit({onhandleCloseButtons}){
             <NavLink
               to="/benefits/benefits-later"
               className="text-pink-500 font-bold hover:underline"
-              onClick={onhandleCloseButtons}
+              onClick={handleCloseButtons}
             >
               Benefits in Later Life
             </NavLink>

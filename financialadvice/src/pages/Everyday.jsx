@@ -1,8 +1,10 @@
 import Budgetplanner from "./Budgetplanner"
+import { useAppStates } from "../hooks/useAppStates";
 
-function Everyday({ onhandleCloseButtons }) {
+function Everyday() {
+  const {handleCloseButtons} = useAppStates()
   function OpenUI () {
-    onhandleCloseButtons();
+    handleCloseButtons();
   }
   return (
     <div onClick={OpenUI}>

@@ -1,11 +1,13 @@
 import { Outlet } from "react-router-dom";
 import { useEffect } from "react";
-function UniversalCredit({onhandleCloseButtons }) {
+import { useAppStates } from "../hooks/useAppStates";
+function UniversalCredit() {
 /*useEffect(function(){
   onhandleCloseButtons()
 }, [])*/
+const {handleCloseButtons} = useAppStates()
     return (
-      <div onClick={onhandleCloseButtons}>
+      <div onClick={handleCloseButtons}>
         <div
           className="bg-[url(https://media.istockphoto.com/id/956344832/vector/abstract-white-background-geometric-texture.jpg?s=612x612&w=0&k=20&c=z2EPil603uxXVXUtPst-BAhwhqN9ATG1Nzep_AIPY2Q=)] bg-repeat
       h-[100px]
