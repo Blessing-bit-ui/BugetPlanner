@@ -26,7 +26,7 @@ import PensionsProblems from "./components/PensionsProblems";
 import StatePension from "./components/StatePension";
 import TaxPension from "./components/TaxPension"
 import PensionTransfer from './components/PensionTransfer'
-import Taxandretirement from "./components/taxandretirement";
+import Taxandretirement from "./components/Taxandretirement";
 import HowtoSave from "./components/HowtoSave";
 import Investing from "./components/Investing";
 import TypeofSavings from "./components/TypeofSavings";
@@ -40,8 +40,6 @@ import Mortgage from "./components/Mortgage";
 import Renting from "./components/Renting";
 import { useAppStates } from "./hooks/useAppStates";
 import { useButtons } from "./hooks/useButtons";
-
-
 
 
 
@@ -68,6 +66,7 @@ setSavings(savings === true && false)
   return (
     <div>
       <Header />
+      
       <BrowserRouter>
         <Buttons
          />
@@ -146,6 +145,7 @@ setSavings(savings === true && false)
           <Route path="homes/renting" element={<Renting />} />
         </Routes>
       </BrowserRouter>
+     
     </div>
   );
 }
@@ -166,7 +166,6 @@ function Header() {
 }
 
 function Buttons() {
-  const {handleBenefits, handleEveryDay, handlePensions, handleHomes, handleWork, handleSavings} =useButtons()
   const {
     benefits,
     everydayMoney,
@@ -174,7 +173,12 @@ function Buttons() {
     homes,
     work,
     savings,
-    
+    handleBenefits,
+    handleEveryDay,
+    handlePensions,
+    handleHomes,
+    handleWork,
+    handleSavings,
   } = useAppStates();
 
   return (
@@ -220,7 +224,7 @@ function Buttons() {
 
       {benefits && (
         <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
-          <Benefit onhandleCloseButtons={onhandleCloseButtons}/>
+          <Benefit />
         </div>
       )}
       {everydayMoney && (

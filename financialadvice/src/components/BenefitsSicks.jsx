@@ -12,7 +12,7 @@ function BenefitsSicks() {
       h-[100px]
       "
       >
-        <h1 className="text-blue-600 font-bold text-[40px] ">
+        <h1 className="text-blue-600 font-bold text-[40px]">
           Benefits if sick
         </h1>
       </div>

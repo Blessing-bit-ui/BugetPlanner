@@ -6,4 +6,4 @@ function Taxandretirement() {
     )
 }
 
-export default Taxandretirement
+export default Taxandretirement;

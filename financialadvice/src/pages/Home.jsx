@@ -43,7 +43,10 @@ function Home() {
                     <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
-                    <NavLink className="font-bold text-white hover:underline">
+                    <NavLink
+                      className="font-bold text-white hover:underline"
+                      to="/everyday"
+                    >
                       Everyday money
                     </NavLink>
                   </li>
@@ -52,7 +55,10 @@ function Home() {
                     <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
-                    <NavLink className="font-bold text-white hover:underline">
+                    <NavLink
+                      className="font-bold text-white hover:underline"
+                      to="pension"
+                    >
                       Pensions
                     </NavLink>
                   </li>
@@ -60,7 +66,10 @@ function Home() {
                     <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
-                    <NavLink className="font-bold text-white hover:underline">
+                    <NavLink
+                      className="font-bold text-white hover:underline"
+                      to="/homes"
+                    >
                       Homes
                     </NavLink>
                   </li>
@@ -68,7 +77,10 @@ function Home() {
                     <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
-                    <NavLink className="font-bold text-white hover:underline">
+                    <NavLink
+                      className="font-bold text-white hover:underline"
+                      to="/work"
+                    >
                       Work
                     </NavLink>
                   </li>
@@ -80,7 +92,10 @@ function Home() {
                     <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
-                    <NavLink className="font-bold text-white hover:underline">
+                    <NavLink
+                      className="font-bold text-white hover:underline"
+                      to="/saving"
+                    >
                       Savings
                     </NavLink>
                   </li>
@@ -88,7 +103,7 @@ function Home() {
                     <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
-                    <NavLink className="font-bold text-white hover:underline">
+                    <NavLink className="font-bold text-white hover:underline" to="/">
                       Family & Care
                     </NavLink>
                   </li>
