@@ -1,9 +1,7 @@
  import {NavLink} from "react-router-dom"
- import { useNavigate } from "react-router-dom";
  import PageNav from "./PageNav";
 
 function Home() {
-  const navigate= useNavigate()
     return (
       <div>
         <PageNav />
@@ -24,11 +22,11 @@ function Home() {
             <button className="text-white  bg-pink-500 font-bold  mt-2 p-2 border  rounded hover:underline">
               Contact us
             </button>
-            <div className="flex text-[18px]">
+            <div className="home-topic-links">
               <section>
                 <ul>
                   <li>
-                    <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
+                    <span className="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
                     <NavLink
@@ -40,7 +38,7 @@ function Home() {
                     </NavLink>
                   </li>
                   <li>
-                    <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
+                    <span className="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
                     <NavLink
@@ -52,7 +50,7 @@ function Home() {
                   </li>
 
                   <li>
-                    <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
+                    <span className="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
                     <NavLink
@@ -63,7 +61,7 @@ function Home() {
                     </NavLink>
                   </li>
                   <li>
-                    <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
+                    <span className="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
                     <NavLink
@@ -74,7 +72,7 @@ function Home() {
                     </NavLink>
                   </li>
                   <li>
-                    <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
+                    <span className="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
                     <NavLink
@@ -86,10 +84,10 @@ function Home() {
                   </li>
                 </ul>
               </section>
-              <section className="ml-10">
+              <section>
                 <ul>
                   <li>
-                    <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
+                    <span className="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
                     <NavLink
@@ -100,7 +98,7 @@ function Home() {
                     </NavLink>
                   </li>
                   <li>
-                    <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
+                    <span className="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
                     <NavLink className="font-bold text-white hover:underline" to="/">
@@ -108,7 +106,7 @@ function Home() {
                     </NavLink>
                   </li>
                   <li>
-                    <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
+                    <span className="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
                     <NavLink className="font-bold text-white hover:underline">
@@ -116,7 +114,7 @@ function Home() {
                     </NavLink>
                   </li>
                   <li>
-                    <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
+                    <span className="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto font-bolder ">
                       arrow_forward_ios
                     </span>
                     <NavLink className="font-bold text-white hover:underline">
@@ -124,7 +122,7 @@ function Home() {
                     </NavLink>
                   </li>
                   <li>
-                    <span class="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto  ">
+                    <span className="material-symbols-outlined text-pink-600 text-sm mt-auto mb-auto  ">
                       arrow_forward_ios
                     </span>
                     <NavLink className="font-bold text-white hover:underline">

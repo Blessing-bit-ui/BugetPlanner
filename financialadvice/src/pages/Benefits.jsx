@@ -18,7 +18,7 @@ function Benefits() {
             you qualify, and what to do if things go wrong.{" "}
           </p>
           <div className="flex justify-center w-full ">
-            <div className=" mt-5 grid  grid-cols-3 mt-10 w-11/12 items-center">
+            <div className="topic-grid mt-5 grid grid-cols-3 mt-10 w-11/12 items-center">
               <section className="h-[400px] w-[370px]  rounded-bl-2xl shadow-[0_5px_0_rgba(0,0,0,0.4)] ">
                 <span>
                   <img

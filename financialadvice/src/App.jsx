@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Everyday from "./pages/Everyday";
 import Pension from "./pages/Pension";
-import Saving from "./pages/Saving"
+import Saving from "./pages/Saving";
+import WorkPage from "./pages/Work";
 import PageNav from "./pages/PageNav";
 import Benefits from "./pages/Benefits";
 import UniversalCredit from "./components/UniversalCredit";
@@ -18,14 +19,14 @@ import BankingandPayment from "./components/BankingandPayment";
 import Budgeting from "./components/Budgeting";
 import Buyingandrunning from "./components/Buyingandrunning";
 import Credit from "./components/Credit";
-import Insurance from "./components/Insurance"
+import Insurance from "./components/Insurance";
 import ManageandGrow from "./components/ManageandGrow";
 import PensionExplain from "./components/PensionExplain";
 import TakingPension from "./components/TakingPension";
 import PensionsProblems from "./components/PensionsProblems";
 import StatePension from "./components/StatePension";
-import TaxPension from "./components/TaxPension"
-import PensionTransfer from './components/PensionTransfer'
+import TaxPension from "./components/TaxPension";
+import PensionTransfer from "./components/PensionTransfer";
 import Taxandretirement from "./components/Taxandretirement";
 import HowtoSave from "./components/HowtoSave";
 import Investing from "./components/Investing";
@@ -40,112 +41,54 @@ import Mortgage from "./components/Mortgage";
 import Renting from "./components/Renting";
 import { useAppStates } from "./hooks/useAppStates";
 import { useButtons } from "./hooks/useButtons";
-
-
-
-
+import Footer from "./components/Footer";
 
 function App() {
- /* const [benefits, setBenefits] = useState(false);
-  const [everydayMoney, setEverydayMoney] = useState(false);
-  const [pensions, setPensions] = useState(false);
-  const [homes, setHomes] = useState(false);
-  const [work, setWork] = useState(false);
-  const [savings, setSavings] = useState(false); 
-
-function handleCloseButtons(){
-setBenefits(benefits === true  && false)
-setEverydayMoney(everydayMoney === true && false)
-setPensions(pensions === true && false)
-setHomes(homes === true && false)
-setWork(work === true && false)
-setSavings(savings === true && false)
-}*/
-
-
   return (
-    <div>
+    <div className="app-shell">
       <Header />
-      
       <BrowserRouter>
-        <Buttons
-         />
-        <Routes>
+        <Buttons />
+        <div className="app-page-content">
+          <Routes>
           <Route path="/" element={<Home />} />
-
-          <Route
-            path="everyday"
-            element={<Everyday />}
-          />
-          <Route
-            path="everyday/bankingandpayments"
-            element={<BankingandPayment />}
-          />
+          <Route path="everyday" element={<Everyday />} />
+          <Route path="everyday/bankingandpayments" element={<BankingandPayment />} />
           <Route path="everyday/budgeting" element={<Budgeting />} />
-          <Route
-            path="everyday/buyingandrunning"
-            element={<Buyingandrunning />}
-          />
+          <Route path="everyday/buyingandrunning" element={<Buyingandrunning />} />
           <Route path="everyday/credit" element={<Credit />} />
           <Route path="everyday/insurance" element={<Insurance />} />
           <Route path="benefits" element={<Benefits />} />
-          <Route
-            path="benefits/universalbenefits"
-            element={
-              <UniversalCredit  />
-            }
-          />
-          <Route
-            path="benefits/benefits-for-children"
-            element={
-              <BenefitsForChildren  />
-            }
-          />
-          <Route
-            path="benefits/benefits-if-you-sick"
-            element={
-              <BenefitsSicks  />
-            }
-          />
-          <Route
-            path="benefits/benefits-later"
-            element={
-              <Benefitslater  />
-            }
-          />
-          <Route
-            path="pension"
-            element={<Pension  />}
-          />
+          <Route path="benefits/universalbenefits" element={<UniversalCredit />} />
+          <Route path="benefits/benefits-for-children" element={<BenefitsForChildren />} />
+          <Route path="benefits/benefits-if-you-sick" element={<BenefitsSicks />} />
+          <Route path="benefits/benefits-later" element={<Benefitslater />} />
+          <Route path="pension" element={<Pension />} />
           <Route path="pension/managegrow" element={<ManageandGrow />} />
           <Route path="pension/pensionexplain" element={<PensionExplain />} />
-          <Route
-            path="pension/pensionproblems"
-            element={<PensionsProblems />}
-          />
+          <Route path="pension/pensionproblems" element={<PensionsProblems />} />
           <Route path="pension/pensiontranfer" element={<PensionTransfer />} />
           <Route path="pension/statepension" element={<StatePension />} />
           <Route path="pension/takingpension" element={<TakingPension />} />
           <Route path="pension/taxpension" element={<TaxPension />} />
-          <Route
-            path="pension/taxandretirement"
-            element={<Taxandretirement />}
-          />
+          <Route path="pension/taxandretirement" element={<Taxandretirement />} />
           <Route path="saving" element={<Saving />} />
+          <Route path="saving/allsavings" element={<AllSavings />} />
           <Route path="saving/howtosave" element={<HowtoSave />} />
           <Route path="saving/investing" element={<Investing />} />
           <Route path="saving/typeofsavings" element={<TypeofSavings />} />
-          <Route path="work" element={<Work />} />
+          <Route path="work" element={<WorkPage />} />
           <Route path="work/employment" element={<Employment />} />
           <Route path="work/losingyourjob" element={<Losingyourjob />} />
           <Route path="work/selfemployment" element={<Selfemploment />} />
           <Route path="work/allwork" element={<Allwork />} />
-          <Route path="homes" element={<Homess/>} />
+          <Route path="homes" element={<Homess />} />
           <Route path="homes/mortgage" element={<Mortgage />} />
           <Route path="homes/renting" element={<Renting />} />
-        </Routes>
+          </Routes>
+        </div>
+        <Footer />
       </BrowserRouter>
-     
     </div>
   );
 }
@@ -154,10 +97,10 @@ export default App;
 
 function Header() {
   return (
-    <div>
-      <h1 className="text-blue-600 font-bricolage text-4xl font-bold">
+    <div className="brand-header">
+      <h1 className="brand-heading">
         MONEY <br />
-        PLANNER
+        <span>PLANNER</span>
       </h1>
      
    
@@ -182,75 +125,87 @@ function Buttons() {
   } = useAppStates();
 
   return (
-    <div className="relative">
-      <div className="bg-blue-600 p-2 gap-4 flex justify shadow">
+    <div className="navigation-shell">
+      <div className="nav-menu-bar" role="group" aria-label="Main sections">
         <button
           onClick={handleBenefits}
-          className="bg-tranparent border-none p-0 m-0 text-inherit cursor-pointer text-white hover:underline hover:bg-pink-500 rounded-sm p-2 font-bold "
+          className={`nav-trigger ${benefits ? "is-open" : ""}`}
+          aria-expanded={benefits}
+          aria-controls="benefits-menu"
         >
           Benefits
         </button>
         <button
           onClick={handleEveryDay}
-          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer text-white hover:underline focus:outline-none hover:bg-pink-500 rounded-sm p-2 font-bold"
+          className={`nav-trigger ${everydayMoney ? "is-open" : ""}`}
+          aria-expanded={everydayMoney}
+          aria-controls="everyday-menu"
         >
           Everyday money
         </button>
         <button
           onClick={handlePensions}
-          className="bg-transparent border-none p-0 m-0 text-inherit text-white cursor-pointer hover:underline focus:outline-none hover:bg-pink-500 rounded-sm p-2 font-bold "
+          className={`nav-trigger ${pensions ? "is-open" : ""}`}
+          aria-expanded={pensions}
+          aria-controls="pensions-menu"
         >
           Pensions
         </button>
         <button
           onClick={handleHomes}
-          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-pink-500 rounded-sm p-2 font-bold text-white"
+          className={`nav-trigger ${homes ? "is-open" : ""}`}
+          aria-expanded={homes}
+          aria-controls="homes-menu"
         >
           Homes
         </button>
         <button
           onClick={handleWork}
-          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-pink-500 rounded-sm p-2 font-bold text-white"
+          className={`nav-trigger ${work ? "is-open" : ""}`}
+          aria-expanded={work}
+          aria-controls="work-menu"
         >
           Work
         </button>
         <button
           onClick={handleSavings}
-          className="bg-transparent border-none p-0 m-0 text-inherit cursor-pointer hover:underline focus:outline-none hover:bg-pink-500 rounded-sm p-2 font-bold text-white "
+          className={`nav-trigger ${savings ? "is-open" : ""}`}
+          aria-expanded={savings}
+          aria-controls="savings-menu"
         >
           Savings
         </button>
       </div>
 
       {benefits && (
-        <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+        <nav className="nav-menu-panel" id="benefits-menu" aria-label="Benefits navigation">
           <Benefit />
-        </div>
+        </nav>
       )}
       {everydayMoney && (
-        <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
+        <nav className="nav-menu-panel" id="everyday-menu" aria-label="Everyday money navigation">
           <EverdayMoney />
-        </div>
+        </nav>
       )}
       {pensions && (
-        <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
-          <Pensions />{" "}
-        </div>
+        <nav className="nav-menu-panel" id="pensions-menu" aria-label="Pensions navigation">
+          <Pensions />
+        </nav>
       )}
       {homes && (
-        <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
-          <Homes />{" "}
-        </div>
+        <nav className="nav-menu-panel" id="homes-menu" aria-label="Homes navigation">
+          <Homes />
+        </nav>
       )}
       {work && (
-        <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
-          <Work />{" "}
-        </div>
+        <nav className="nav-menu-panel" id="work-menu" aria-label="Work navigation">
+          <Work />
+        </nav>
       )}
       {savings && (
-        <div className="absolute top-10 left-0  h-screen bg-white/95 z-50 transition-all duration-500 ease-in-out translate-y-0 opacity-100">
-          <Savings />{" "}
-        </div>
+        <nav className="nav-menu-panel" id="savings-menu" aria-label="Savings navigation">
+          <Savings />
+        </nav>
       )}
     </div>
   );

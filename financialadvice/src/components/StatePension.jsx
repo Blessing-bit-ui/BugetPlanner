@@ -1,9 +1,5 @@
-function StatePension() {
-    return (
-        <div>
-            StatePension
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default StatePension
+export default function StatePension() {
+  return <GuidancePage topic="StatePension" />;
+}

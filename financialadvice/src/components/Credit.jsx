@@ -1,9 +1,5 @@
-function Credit() {
-    return (
-        <div>
-            Credit
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default Credit
+export default function Credit() {
+  return <GuidancePage topic="Credit" />;
+}

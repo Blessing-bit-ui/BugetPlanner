@@ -1,9 +1,5 @@
-function BankingandPayment() {
-    return (
-        <div>
-            Banking
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default BankingandPayment
+export default function BankingandPayment() {
+  return <GuidancePage topic="BankingandPayment" />;
+}

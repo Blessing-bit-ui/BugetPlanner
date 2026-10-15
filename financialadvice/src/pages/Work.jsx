@@ -1,9 +1,5 @@
-function Work() {
-    return (
-        <div>
-            work
-        </div>
-    )
-}
+import Allwork from "../components/Allwork";
 
-export default Work
+export default function Work() {
+  return <Allwork />;
+}

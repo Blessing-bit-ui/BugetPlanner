@@ -1,9 +1,5 @@
-function PensionExplain() {
-    return (
-        <div>
-            PensionExampl
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default PensionExplain
+export default function PensionExplain() {
+  return <GuidancePage topic="PensionExplain" />;
+}

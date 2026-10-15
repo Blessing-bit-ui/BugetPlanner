@@ -1,9 +1,5 @@
-function Homess() {
-    return (
-        <div>
-            Homess
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default Homess
+export default function Homess() {
+  return <GuidancePage topic="Homess" />;
+}

@@ -1,9 +1,5 @@
-function Allwork() {
-    return (
-        <div>
-            all work
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default Allwork
+export default function Allwork() {
+  return <GuidancePage topic="Allwork" />;
+}

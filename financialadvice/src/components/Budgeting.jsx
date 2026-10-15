@@ -1,9 +1,5 @@
-function Budgeting() {
-    return (
-        <div>
-            Budgeting
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default Budgeting
+export default function Budgeting() {
+  return <GuidancePage topic="Budgeting" />;
+}

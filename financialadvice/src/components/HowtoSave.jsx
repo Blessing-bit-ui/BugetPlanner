@@ -1,9 +1,5 @@
-function HowtoSave() {
-    return (
-        <div>
-            Homesaving
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default HowtoSave
+export default function HowtoSave() {
+  return <GuidancePage topic="HowtoSave" />;
+}

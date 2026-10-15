@@ -1,9 +1,5 @@
-function Selfemploment() {
-    return (
-        <div>
-          Selfemploment  
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default Selfemploment
+export default function Selfemploment() {
+  return <GuidancePage topic="Selfemploment" />;
+}

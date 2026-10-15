@@ -1,9 +1,5 @@
-function Losingyourjob() {
-    return (
-        <div>
-            Losingyourjob
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default Losingyourjob
+export default function Losingyourjob() {
+  return <GuidancePage topic="Losingyourjob" />;
+}

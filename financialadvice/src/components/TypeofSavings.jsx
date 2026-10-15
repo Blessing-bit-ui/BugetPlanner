@@ -1,9 +1,5 @@
-function TypeofSavings() {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default TypeofSavings
+export default function TypeofSavings() {
+  return <GuidancePage topic="TypeofSavings" />;
+}

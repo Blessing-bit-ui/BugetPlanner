@@ -1,9 +1,5 @@
-function Buyingandrunning() {
-    return (
-        <div>
-          Buying and running  
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default Buyingandrunning;
+export default function Buyingandrunning() {
+  return <GuidancePage topic="Buyingandrunning" />;
+}

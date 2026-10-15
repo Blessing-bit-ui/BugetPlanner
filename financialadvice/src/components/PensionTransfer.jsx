@@ -1,9 +1,5 @@
-function PensionTransfer() {
-    return (
-        <div>
-            PensionTransfer
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default PensionTransfer
+export default function PensionTransfer() {
+  return <GuidancePage topic="PensionTransfer" />;
+}

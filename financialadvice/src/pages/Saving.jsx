@@ -1,9 +1,5 @@
-function Saving() {
-    return (
-        <div>
-            Savings
-        </div>
-    )
-}
+import AllSavings from "../components/AllSavings";
 
-export default Saving
+export default function Saving() {
+  return <AllSavings />;
+}

@@ -1,9 +1,5 @@
-function ManageandGrow() {
-    return (
-        <div>
-            ManageGrow
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default ManageandGrow
+export default function ManageandGrow() {
+  return <GuidancePage topic="ManageandGrow" />;
+}

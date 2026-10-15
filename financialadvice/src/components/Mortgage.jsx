@@ -1,9 +1,5 @@
-function Mortgage() {
-    return (
-        <div>
-            morgat
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default Mortgage
+export default function Mortgage() {
+  return <GuidancePage topic="Mortgage" />;
+}

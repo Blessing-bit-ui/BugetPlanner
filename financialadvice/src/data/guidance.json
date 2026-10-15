@@ -1,0 +1,910 @@
+{
+  "AllSavings": {
+    "title": "All savings guidance",
+    "intro": "Plan for everyday surprises and future goals.",
+    "group": "Savings",
+    "source": "https://www.moneyhelper.org.uk/en/savings",
+    "sections": [
+      {
+        "title": "Start with a goal",
+        "text": "Give each savings pot a purpose, a target amount and a date. Review your budget to decide what you can put aside."
+      },
+      {
+        "title": "Choose your next step",
+        "text": "Explore saving habits, compare account features or learn how investing differs from cash savings."
+      }
+    ],
+    "related": [
+      {
+        "title": "How to save",
+        "to": "/saving/howtosave"
+      },
+      {
+        "title": "Types of savings",
+        "to": "/saving/typeofsavings"
+      },
+      {
+        "title": "Investing basics",
+        "to": "/saving/investing"
+      }
+    ]
+  },
+  "HowtoSave": {
+    "title": "How to save",
+    "intro": "Build a savings habit that fits your budget.",
+    "group": "Savings",
+    "source": "https://www.moneyhelper.org.uk/en/savings",
+    "sections": [
+      {
+        "title": "Make it manageable",
+        "text": "Choose an amount you can afford after essential bills. A small regular contribution is a useful starting point."
+      },
+      {
+        "title": "Give savings a place",
+        "text": "Keep money for unexpected costs separate from everyday spending. Review your contributions when your income or bills change."
+      },
+      {
+        "title": "Plan for irregular costs",
+        "text": "List annual expenses such as insurance renewals and celebrations. Put a little aside each month so they are easier to cover."
+      }
+    ],
+    "related": [
+      {
+        "title": "All savings guidance",
+        "to": "/saving/allsavings"
+      },
+      {
+        "title": "Types of savings",
+        "to": "/saving/typeofsavings"
+      },
+      {
+        "title": "Investing basics",
+        "to": "/saving/investing"
+      }
+    ]
+  },
+  "TypeofSavings": {
+    "title": "Types of savings",
+    "intro": "Compare access, interest and conditions before choosing an account.",
+    "group": "Savings",
+    "source": "https://www.moneyhelper.org.uk/en/savings",
+    "sections": [
+      {
+        "title": "Easy-access savings",
+        "text": "Check how quickly you can withdraw money and whether withdrawals affect the interest rate."
+      },
+      {
+        "title": "Regular and fixed-term accounts",
+        "text": "Compare monthly deposit limits and withdrawal restrictions. Only commit money for a fixed term if you can manage without it."
+      },
+      {
+        "title": "Saving for a particular goal",
+        "text": "Match the account to when you need the money. Check current ISA eligibility and tax rules on GOV.UK before applying."
+      }
+    ],
+    "related": [
+      {
+        "title": "All savings guidance",
+        "to": "/saving/allsavings"
+      },
+      {
+        "title": "How to save",
+        "to": "/saving/howtosave"
+      },
+      {
+        "title": "Investing basics",
+        "to": "/saving/investing"
+      }
+    ]
+  },
+  "Investing": {
+    "title": "Investing basics",
+    "intro": "Understand the risks and costs before committing money.",
+    "group": "Savings",
+    "source": "https://www.moneyhelper.org.uk/en/savings",
+    "sections": [
+      {
+        "title": "Saving or investing?",
+        "text": "Cash savings and investments serve different needs. Investments can fall in value and you could get back less than you put in."
+      },
+      {
+        "title": "Understand what you buy",
+        "text": "Read about the investment, its charges and how you can access your money. Spreading investments can reduce concentration risk but does not prevent losses."
+      },
+      {
+        "title": "Check the provider",
+        "text": "Use the FCA register and check contact details independently. Take time to understand an offer before sending money."
+      }
+    ],
+    "related": [
+      {
+        "title": "All savings guidance",
+        "to": "/saving/allsavings"
+      },
+      {
+        "title": "How to save",
+        "to": "/saving/howtosave"
+      },
+      {
+        "title": "Types of savings",
+        "to": "/saving/typeofsavings"
+      }
+    ]
+  },
+  "Allwork": {
+    "title": "All work guidance",
+    "intro": "Explore money matters at each stage of working life.",
+    "group": "Work",
+    "source": "https://www.moneyhelper.org.uk/en/work",
+    "sections": [
+      {
+        "title": "Starting or changing work",
+        "text": "Review your take-home pay, travel costs and workplace benefits when planning a new job."
+      },
+      {
+        "title": "When circumstances change",
+        "text": "Use the guides below to prepare for self-employment or a break between jobs."
+      }
+    ],
+    "related": [
+      {
+        "title": "Employment and your money",
+        "to": "/work/employment"
+      },
+      {
+        "title": "Losing your job",
+        "to": "/work/losingyourjob"
+      },
+      {
+        "title": "Self-employment",
+        "to": "/work/selfemployment"
+      }
+    ]
+  },
+  "Employment": {
+    "title": "Employment and your money",
+    "intro": "Make sense of your pay and workplace benefits.",
+    "group": "Work",
+    "source": "https://www.moneyhelper.org.uk/en/work",
+    "sections": [
+      {
+        "title": "Read your payslip",
+        "text": "Compare gross pay, deductions and the amount paid into your account. Ask payroll about anything you do not recognise."
+      },
+      {
+        "title": "Review your benefits",
+        "text": "Read your contract and check pension, leave and sick-pay arrangements. Include commuting and childcare in your working budget."
+      },
+      {
+        "title": "Keep useful records",
+        "text": "Store payslips, your contract and tax documents securely. Update your budget when your hours or pay change."
+      }
+    ],
+    "related": [
+      {
+        "title": "All work guidance",
+        "to": "/work/allwork"
+      },
+      {
+        "title": "Losing your job",
+        "to": "/work/losingyourjob"
+      },
+      {
+        "title": "Self-employment",
+        "to": "/work/selfemployment"
+      }
+    ]
+  },
+  "Losingyourjob": {
+    "title": "Losing your job",
+    "intro": "Organise your finances while you plan your next steps.",
+    "group": "Work",
+    "source": "https://www.moneyhelper.org.uk/en/work",
+    "sections": [
+      {
+        "title": "Get the details in writing",
+        "text": "Ask for confirmation of your final pay, notice arrangements, unused leave and any redundancy offer. Check your circumstances with Acas."
+      },
+      {
+        "title": "Build a short-term budget",
+        "text": "List available income and essential bills. Contact lenders or service providers early if a payment will be difficult."
+      },
+      {
+        "title": "Find support",
+        "text": "Check benefits eligibility through GOV.UK and explore job-search support. Keep records of applications and important employment documents."
+      }
+    ],
+    "related": [
+      {
+        "title": "All work guidance",
+        "to": "/work/allwork"
+      },
+      {
+        "title": "Employment and your money",
+        "to": "/work/employment"
+      },
+      {
+        "title": "Self-employment",
+        "to": "/work/selfemployment"
+      }
+    ]
+  },
+  "Selfemploment": {
+    "title": "Self-employment",
+    "intro": "Plan for business costs and an income that can change.",
+    "group": "Work",
+    "source": "https://www.moneyhelper.org.uk/en/work",
+    "sections": [
+      {
+        "title": "Separate your records",
+        "text": "Track invoices, payments and business expenses. Keep receipts and note payment deadlines."
+      },
+      {
+        "title": "Prepare for quieter months",
+        "text": "Build your household budget around a cautious income estimate. Plan separately for business costs, tax and time away from work."
+      },
+      {
+        "title": "Check your responsibilities",
+        "text": "Use HMRC guidance to check registration and reporting requirements. Review insurance and pension arrangements as your business develops."
+      }
+    ],
+    "related": [
+      {
+        "title": "All work guidance",
+        "to": "/work/allwork"
+      },
+      {
+        "title": "Employment and your money",
+        "to": "/work/employment"
+      },
+      {
+        "title": "Losing your job",
+        "to": "/work/losingyourjob"
+      }
+    ]
+  },
+  "BankingandPayment": {
+    "title": "Banking and payments",
+    "intro": "Choose practical ways to manage everyday money.",
+    "group": "Everyday money",
+    "source": "https://www.moneyhelper.org.uk/en/everyday-money",
+    "sections": [
+      {
+        "title": "Compare account features",
+        "text": "Look at account fees, overdraft costs, access and customer support. Check whether an account meets your day-to-day needs."
+      },
+      {
+        "title": "Keep track of payments",
+        "text": "Review standing orders, Direct Debits and subscriptions. Leave room in your budget for bills due before your next payday."
+      },
+      {
+        "title": "Protect your account",
+        "text": "Never share security codes or move money because of an unexpected call. Contact your bank using details you have checked independently."
+      }
+    ],
+    "related": [
+      {
+        "title": "Budgeting",
+        "to": "/everyday/budgeting"
+      },
+      {
+        "title": "Buying and running a car",
+        "to": "/everyday/buyingandrunning"
+      },
+      {
+        "title": "Credit and borrowing",
+        "to": "/everyday/credit"
+      },
+      {
+        "title": "Insurance",
+        "to": "/everyday/insurance"
+      }
+    ]
+  },
+  "Budgeting": {
+    "title": "Budgeting",
+    "intro": "See what comes in, what goes out and what needs adjusting.",
+    "group": "Everyday money",
+    "source": "https://www.moneyhelper.org.uk/en/everyday-money",
+    "sections": [
+      {
+        "title": "Gather your figures",
+        "text": "Use payslips, bills and statements to list income and spending. Include annual costs and irregular expenses."
+      },
+      {
+        "title": "Compare like for like",
+        "text": "Convert amounts to the same time period before adding them up. Separate essential bills from spending you can adjust."
+      },
+      {
+        "title": "Review regularly",
+        "text": "Check your plan against actual spending. Update it when income, bills or household circumstances change."
+      }
+    ],
+    "related": [
+      {
+        "title": "Banking and payments",
+        "to": "/everyday/bankingandpayments"
+      },
+      {
+        "title": "Buying and running a car",
+        "to": "/everyday/buyingandrunning"
+      },
+      {
+        "title": "Credit and borrowing",
+        "to": "/everyday/credit"
+      },
+      {
+        "title": "Insurance",
+        "to": "/everyday/insurance"
+      }
+    ]
+  },
+  "Buyingandrunning": {
+    "title": "Buying and running a car",
+    "intro": "Look beyond the purchase price when planning a car budget.",
+    "group": "Everyday money",
+    "source": "https://www.moneyhelper.org.uk/en/everyday-money",
+    "sections": [
+      {
+        "title": "Count the running costs",
+        "text": "Include insurance, fuel or charging, servicing, repairs, parking and applicable vehicle taxes."
+      },
+      {
+        "title": "Compare ways to pay",
+        "text": "Read finance terms, fees, mileage limits and the total repayable amount. Check what happens at the end of the agreement."
+      },
+      {
+        "title": "Prepare before buying",
+        "text": "Check vehicle history and condition. Keep a reserve for repairs and review insurance costs before committing."
+      }
+    ],
+    "related": [
+      {
+        "title": "Banking and payments",
+        "to": "/everyday/bankingandpayments"
+      },
+      {
+        "title": "Budgeting",
+        "to": "/everyday/budgeting"
+      },
+      {
+        "title": "Credit and borrowing",
+        "to": "/everyday/credit"
+      },
+      {
+        "title": "Insurance",
+        "to": "/everyday/insurance"
+      }
+    ]
+  },
+  "Credit": {
+    "title": "Credit and borrowing",
+    "intro": "Understand the commitment before taking on repayments.",
+    "group": "Everyday money",
+    "source": "https://www.moneyhelper.org.uk/en/everyday-money",
+    "sections": [
+      {
+        "title": "Compare the full cost",
+        "text": "Look at interest, fees, repayment dates and the total amount repayable. Check whether the rate can change."
+      },
+      {
+        "title": "Check affordability",
+        "text": "Consider how repayments fit alongside essentials and existing debts. Think about what would happen if your income fell."
+      },
+      {
+        "title": "Get help early",
+        "text": "If repayments are becoming difficult, contact the lender and seek free debt guidance through MoneyHelper."
+      }
+    ],
+    "related": [
+      {
+        "title": "Banking and payments",
+        "to": "/everyday/bankingandpayments"
+      },
+      {
+        "title": "Budgeting",
+        "to": "/everyday/budgeting"
+      },
+      {
+        "title": "Buying and running a car",
+        "to": "/everyday/buyingandrunning"
+      },
+      {
+        "title": "Insurance",
+        "to": "/everyday/insurance"
+      }
+    ]
+  },
+  "Insurance": {
+    "title": "Insurance",
+    "intro": "Compare protection against the risks that matter to you.",
+    "group": "Everyday money",
+    "source": "https://www.moneyhelper.org.uk/en/everyday-money",
+    "sections": [
+      {
+        "title": "Identify the cover you need",
+        "text": "List existing policies and any cover included through work or other accounts. Check for gaps and overlap."
+      },
+      {
+        "title": "Read the details",
+        "text": "Compare exclusions, excesses, limits and claim requirements as well as price. Make sure the information you provide is accurate."
+      },
+      {
+        "title": "Review at renewal",
+        "text": "Check whether your circumstances or possessions have changed. Compare the terms before renewing or switching."
+      }
+    ],
+    "related": [
+      {
+        "title": "Banking and payments",
+        "to": "/everyday/bankingandpayments"
+      },
+      {
+        "title": "Budgeting",
+        "to": "/everyday/budgeting"
+      },
+      {
+        "title": "Buying and running a car",
+        "to": "/everyday/buyingandrunning"
+      },
+      {
+        "title": "Credit and borrowing",
+        "to": "/everyday/credit"
+      }
+    ]
+  },
+  "Homess": {
+    "title": "Homes and housing",
+    "intro": "Plan for the costs of renting, buying and maintaining a home.",
+    "group": "Homes",
+    "source": "https://www.moneyhelper.org.uk/en/homes",
+    "sections": [
+      {
+        "title": "Work out a housing budget",
+        "text": "Include bills, moving costs and ongoing household spending alongside rent or mortgage payments."
+      },
+      {
+        "title": "Explore your options",
+        "text": "Use the renting and mortgage guides to prepare questions and organise the documents you need."
+      }
+    ],
+    "related": [
+      {
+        "title": "Mortgages and homebuying",
+        "to": "/homes/mortgage"
+      },
+      {
+        "title": "Renting a home",
+        "to": "/homes/renting"
+      }
+    ]
+  },
+  "Mortgage": {
+    "title": "Mortgages and homebuying",
+    "intro": "Prepare for the upfront and ongoing costs of owning a home.",
+    "group": "Homes",
+    "source": "https://www.moneyhelper.org.uk/en/homes",
+    "sections": [
+      {
+        "title": "Budget beyond the deposit",
+        "text": "Allow for legal work, surveys, moving and any applicable property taxes. Include maintenance and insurance in your ongoing plan."
+      },
+      {
+        "title": "Compare mortgage terms",
+        "text": "Review rates, fees, repayment type and early repayment charges. Consider how a rate change could affect your budget."
+      },
+      {
+        "title": "Ask for help early",
+        "text": "A mortgage adviser can explain options for your circumstances. If payments become difficult, contact your lender promptly."
+      }
+    ],
+    "related": [
+      {
+        "title": "Homes and housing",
+        "to": "/homes"
+      },
+      {
+        "title": "Renting a home",
+        "to": "/homes/renting"
+      }
+    ]
+  },
+  "Renting": {
+    "title": "Renting a home",
+    "intro": "Understand the costs and paperwork before you move.",
+    "group": "Homes",
+    "source": "https://www.moneyhelper.org.uk/en/homes",
+    "sections": [
+      {
+        "title": "Prepare a moving budget",
+        "text": "Include rent, any deposit, moving costs and household bills. Confirm what is included in the rent."
+      },
+      {
+        "title": "Read your agreement",
+        "text": "Check payment dates, repair contacts and notice terms. Tenancy rules vary across the UK, so use guidance for your nation."
+      },
+      {
+        "title": "Keep records",
+        "text": "Save your agreement, payment records and inventory. Raise maintenance or payment problems promptly and keep written copies."
+      }
+    ],
+    "related": [
+      {
+        "title": "Homes and housing",
+        "to": "/homes"
+      },
+      {
+        "title": "Mortgages and homebuying",
+        "to": "/homes/mortgage"
+      }
+    ]
+  },
+  "PensionExplain": {
+    "title": "Pensions explained",
+    "intro": "Get to know the pensions you have and how they work.",
+    "group": "Pensions",
+    "source": "https://www.moneyhelper.org.uk/en/pensions-and-retirement",
+    "sections": [
+      {
+        "title": "Identify your pensions",
+        "text": "List workplace and personal pensions alongside your State Pension forecast. Ask providers which type of pension you hold."
+      },
+      {
+        "title": "Read your statements",
+        "text": "Check contributions, charges and retirement estimates. Estimates are not a guarantee of future income."
+      }
+    ],
+    "related": [
+      {
+        "title": "Manage and grow your pension",
+        "to": "/pension/managegrow"
+      },
+      {
+        "title": "Pension problems and changes",
+        "to": "/pension/pensionproblems"
+      },
+      {
+        "title": "Pension transfers",
+        "to": "/pension/pensiontranfer"
+      },
+      {
+        "title": "State Pension",
+        "to": "/pension/statepension"
+      },
+      {
+        "title": "Taking your pension",
+        "to": "/pension/takingpension"
+      },
+      {
+        "title": "Tax and pensions",
+        "to": "/pension/taxpension"
+      },
+      {
+        "title": "Tax and retirement",
+        "to": "/pension/taxandretirement"
+      }
+    ]
+  },
+  "ManageandGrow": {
+    "title": "Manage and grow your pension",
+    "intro": "Keep your retirement plans under review.",
+    "group": "Pensions",
+    "source": "https://www.moneyhelper.org.uk/en/pensions-and-retirement",
+    "sections": [
+      {
+        "title": "Check your starting point",
+        "text": "Gather statements and review contributions and charges. Make sure providers have current contact and beneficiary details."
+      },
+      {
+        "title": "Plan your retirement budget",
+        "text": "Estimate future spending and compare it with projected income. Ask about contribution options and consider regulated advice for personal decisions."
+      }
+    ],
+    "related": [
+      {
+        "title": "Pensions explained",
+        "to": "/pension/pensionexplain"
+      },
+      {
+        "title": "Pension problems and changes",
+        "to": "/pension/pensionproblems"
+      },
+      {
+        "title": "Pension transfers",
+        "to": "/pension/pensiontranfer"
+      },
+      {
+        "title": "State Pension",
+        "to": "/pension/statepension"
+      },
+      {
+        "title": "Taking your pension",
+        "to": "/pension/takingpension"
+      },
+      {
+        "title": "Tax and pensions",
+        "to": "/pension/taxpension"
+      },
+      {
+        "title": "Tax and retirement",
+        "to": "/pension/taxandretirement"
+      }
+    ]
+  },
+  "PensionsProblems": {
+    "title": "Pension problems and changes",
+    "intro": "Find records and work through pension concerns.",
+    "group": "Pensions",
+    "source": "https://www.moneyhelper.org.uk/en/pensions-and-retirement",
+    "sections": [
+      {
+        "title": "Find missing information",
+        "text": "List former employers and search your records for scheme details. Use the GOV.UK Pension Tracing Service to locate contact information."
+      },
+      {
+        "title": "Raise a concern",
+        "text": "Contact your provider with dates, documents and a clear explanation. Ask for its complaints procedure and keep copies of responses."
+      }
+    ],
+    "related": [
+      {
+        "title": "Pensions explained",
+        "to": "/pension/pensionexplain"
+      },
+      {
+        "title": "Manage and grow your pension",
+        "to": "/pension/managegrow"
+      },
+      {
+        "title": "Pension transfers",
+        "to": "/pension/pensiontranfer"
+      },
+      {
+        "title": "State Pension",
+        "to": "/pension/statepension"
+      },
+      {
+        "title": "Taking your pension",
+        "to": "/pension/takingpension"
+      },
+      {
+        "title": "Tax and pensions",
+        "to": "/pension/taxpension"
+      },
+      {
+        "title": "Tax and retirement",
+        "to": "/pension/taxandretirement"
+      }
+    ]
+  },
+  "PensionTransfer": {
+    "title": "Pension transfers",
+    "intro": "Compare what you could gain and what you could give up.",
+    "group": "Pensions",
+    "source": "https://www.moneyhelper.org.uk/en/pensions-and-retirement",
+    "sections": [
+      {
+        "title": "Compare both schemes",
+        "text": "Ask about charges, guarantees, benefits and transfer terms before deciding. Combining pots is not always the right choice."
+      },
+      {
+        "title": "Get appropriate advice",
+        "text": "Some transfers require regulated advice. Check requirements with your provider and be cautious of unsolicited transfer offers."
+      }
+    ],
+    "related": [
+      {
+        "title": "Pensions explained",
+        "to": "/pension/pensionexplain"
+      },
+      {
+        "title": "Manage and grow your pension",
+        "to": "/pension/managegrow"
+      },
+      {
+        "title": "Pension problems and changes",
+        "to": "/pension/pensionproblems"
+      },
+      {
+        "title": "State Pension",
+        "to": "/pension/statepension"
+      },
+      {
+        "title": "Taking your pension",
+        "to": "/pension/takingpension"
+      },
+      {
+        "title": "Tax and pensions",
+        "to": "/pension/taxpension"
+      },
+      {
+        "title": "Tax and retirement",
+        "to": "/pension/taxandretirement"
+      }
+    ]
+  },
+  "StatePension": {
+    "title": "State Pension",
+    "intro": "Check your forecast and plan alongside other retirement income.",
+    "group": "Pensions",
+    "source": "https://www.moneyhelper.org.uk/en/pensions-and-retirement",
+    "sections": [
+      {
+        "title": "Check your forecast",
+        "text": "Use GOV.UK to view your State Pension forecast and State Pension age. Your entitlement depends on your individual record."
+      },
+      {
+        "title": "Review your record",
+        "text": "Check your National Insurance history and ask about gaps. Confirm whether paying voluntary contributions would improve your pension before paying."
+      }
+    ],
+    "related": [
+      {
+        "title": "Pensions explained",
+        "to": "/pension/pensionexplain"
+      },
+      {
+        "title": "Manage and grow your pension",
+        "to": "/pension/managegrow"
+      },
+      {
+        "title": "Pension problems and changes",
+        "to": "/pension/pensionproblems"
+      },
+      {
+        "title": "Pension transfers",
+        "to": "/pension/pensiontranfer"
+      },
+      {
+        "title": "Taking your pension",
+        "to": "/pension/takingpension"
+      },
+      {
+        "title": "Tax and pensions",
+        "to": "/pension/taxpension"
+      },
+      {
+        "title": "Tax and retirement",
+        "to": "/pension/taxandretirement"
+      }
+    ]
+  },
+  "TakingPension": {
+    "title": "Taking your pension",
+    "intro": "Explore how your pension could support retirement.",
+    "group": "Pensions",
+    "source": "https://www.moneyhelper.org.uk/en/pensions-and-retirement",
+    "sections": [
+      {
+        "title": "Know your scheme",
+        "text": "Ask your provider about access rules and available options. Different pension types offer different ways to receive money."
+      },
+      {
+        "title": "Plan before withdrawing",
+        "text": "Consider tax, ongoing income and how long your savings may need to last. Explore MoneyHelper and Pension Wise guidance before choosing."
+      }
+    ],
+    "related": [
+      {
+        "title": "Pensions explained",
+        "to": "/pension/pensionexplain"
+      },
+      {
+        "title": "Manage and grow your pension",
+        "to": "/pension/managegrow"
+      },
+      {
+        "title": "Pension problems and changes",
+        "to": "/pension/pensionproblems"
+      },
+      {
+        "title": "Pension transfers",
+        "to": "/pension/pensiontranfer"
+      },
+      {
+        "title": "State Pension",
+        "to": "/pension/statepension"
+      },
+      {
+        "title": "Tax and pensions",
+        "to": "/pension/taxpension"
+      },
+      {
+        "title": "Tax and retirement",
+        "to": "/pension/taxandretirement"
+      }
+    ]
+  },
+  "TaxPension": {
+    "title": "Tax and pensions",
+    "intro": "Understand the tax questions to ask about your pension.",
+    "group": "Pensions",
+    "source": "https://www.moneyhelper.org.uk/en/pensions-and-retirement",
+    "sections": [
+      {
+        "title": "Contributions and relief",
+        "text": "Check how contributions and tax relief are handled by your scheme. Current limits depend on rules and your circumstances."
+      },
+      {
+        "title": "Taking money out",
+        "text": "Withdrawals can affect taxable income. Check current HMRC guidance and ask your provider for an illustration before making a decision."
+      }
+    ],
+    "related": [
+      {
+        "title": "Pensions explained",
+        "to": "/pension/pensionexplain"
+      },
+      {
+        "title": "Manage and grow your pension",
+        "to": "/pension/managegrow"
+      },
+      {
+        "title": "Pension problems and changes",
+        "to": "/pension/pensionproblems"
+      },
+      {
+        "title": "Pension transfers",
+        "to": "/pension/pensiontranfer"
+      },
+      {
+        "title": "State Pension",
+        "to": "/pension/statepension"
+      },
+      {
+        "title": "Taking your pension",
+        "to": "/pension/takingpension"
+      },
+      {
+        "title": "Tax and retirement",
+        "to": "/pension/taxandretirement"
+      }
+    ]
+  },
+  "Taxandretirement": {
+    "title": "Tax and retirement",
+    "intro": "Plan around the income you will actually receive.",
+    "group": "Pensions",
+    "source": "https://www.moneyhelper.org.uk/en/pensions-and-retirement",
+    "sections": [
+      {
+        "title": "List your income sources",
+        "text": "Include pensions, work, savings and other expected income. Check how each is taxed using current GOV.UK guidance."
+      },
+      {
+        "title": "Consider timing",
+        "text": "Taking a large withdrawal can change your tax position. Compare possible income patterns and seek qualified advice for complex decisions."
+      }
+    ],
+    "related": [
+      {
+        "title": "Pensions explained",
+        "to": "/pension/pensionexplain"
+      },
+      {
+        "title": "Manage and grow your pension",
+        "to": "/pension/managegrow"
+      },
+      {
+        "title": "Pension problems and changes",
+        "to": "/pension/pensionproblems"
+      },
+      {
+        "title": "Pension transfers",
+        "to": "/pension/pensiontranfer"
+      },
+      {
+        "title": "State Pension",
+        "to": "/pension/statepension"
+      },
+      {
+        "title": "Taking your pension",
+        "to": "/pension/takingpension"
+      },
+      {
+        "title": "Tax and pensions",
+        "to": "/pension/taxpension"
+      }
+    ]
+  }
+}

@@ -1,9 +1,5 @@
-function AllSavings() {
-    return (
-        <div>
-         All saving   
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default AllSavings
+export default function AllSavings() {
+  return <GuidancePage topic="AllSavings" />;
+}

@@ -1,9 +1,5 @@
-function Insurance() {
-    return (
-        <div>
-            Insurance
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default Insurance
+export default function Insurance() {
+  return <GuidancePage topic="Insurance" />;
+}

@@ -1,9 +1,5 @@
-function Employment() {
-    return (
-        <div>
-            employment
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default Employment
+export default function Employment() {
+  return <GuidancePage topic="Employment" />;
+}

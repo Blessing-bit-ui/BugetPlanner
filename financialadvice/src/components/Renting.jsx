@@ -1,9 +1,5 @@
-function Renting() {
-    return (
-        <div>
-            Hello
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default Renting
+export default function Renting() {
+  return <GuidancePage topic="Renting" />;
+}

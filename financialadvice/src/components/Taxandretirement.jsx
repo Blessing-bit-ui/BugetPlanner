@@ -1,9 +1,5 @@
-function Taxandretirement() {
-    return (
-        <div>
-            retirement
-        </div>
-    )
-}
+import GuidancePage from "./GuidancePage";
 
-export default Taxandretirement;
+export default function Taxandretirement() {
+  return <GuidancePage topic="Taxandretirement" />;
+}
